@@ -5,59 +5,33 @@
     <title>과제 9</title>
     <style>
         body{margin:0; padding:0;}
-        #sec01, #sec02, #sec03, #sec04{width:90%; max-width:1200px; margin:0 auto 60px; padding-top:80px; position:relative; overflow:hidden; }
+        #sec01, #sec02{width:90%; max-width:1200px; margin:0 auto 60px; padding-top:80px; position:relative; overflow:hidden; }
         .titleTxt{font-size:24px; border:2px solid #000; color:#000; font-weight:600; padding:10px; width:150px; cursor:pointer; position:absolute; top:10px; left:0;  }
         
-        #sec01 #container{width:100%; height:300px; background:url(./images/bg1.jpg);}
-        #sec02 ul{
-            list-style:none;
-            margin-left:-30px;
-        }
-        #sec02 li{
-            padding-left:50px;
-            line-height:40px;
-            background:url(./images/bg2.png) no-repeat left center;
-            background-size:50px 40px; 
-        }
-
-        .desc{
-            border:5px dotted #222;
-            background-color:#ffd9a0;
-            width:27%;
-            padding:20px;
-            margin-left:2%;
-            float:left;
-        }
-        .desc:first-child{margin-left:0; }
-        #clip-border{background-clip:border-box;}
-        #clip-padding{background-clip:padding-box;}
-        #clip-content{background-clip:content-box;}
+        .container {
+			width:500px;
+			padding:10px;
+			border:1px solid #ccc;
+		}
+		h1 {
+			font-size: 17px;
+		}
+		p {
+			font-size: 16px;
+			line-height: 25px;
+		}
     </style>
 </head>
 <body>
     <section id="sec01">
         <button class="titleTxt" onclick="location.href='#sec01'">연습문제1</button>
-        <div id="container"></div>
+        <div class="container">
+            <h1>웹 디자인 트렌드를 따라잡는 비법 대공개!</h1>
+            <p>그래픽 프로그램으로 웹 디자인 요소를 일일이 만들어 웹사이트를 제작하는 시대는 지났다. 이제 모바일, 태블릿, PC 등 멀티 디바이스에 한 번에 적용할 수 있는 웹 디자인 방법을 알아야 한다. 바로 <b>코딩을 이용한 웹 디자인</b>이다. </p>		
+        </div>
     </section>
     <section id="sec02">
         <button class="titleTxt" onclick="location.href='#sec02'">연습문제2</button>
-        <div id="container">
-            <h1>이지스퍼블리싱</h1>
-            <ul>
-                <li>회사소개</li>
-                <li>도서</li>
-                <li>자료실</li>
-                <li>질문답변</li>
-                <li>동영상강의</li>
-            </ul>
-        </div>
-    </section>
-    <section id="sec03">
-        <button class="titleTxt" onclick="location.href='#sec03'">연습문제3</button>
-        <div id="container"></div>
-    </section>
-    <section id="sec04">
-        <button class="titleTxt" onclick="location.href='#sec04'">연습문제4</button>
         <div id="container">
             <div class="desc" id="clip-border">
                 <h1>레드향</h1>
