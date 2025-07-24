@@ -2,69 +2,38 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title>과제 8</title>
+    <title>과제 9</title>
     <style>
-        body{margin:0; padding:0;}
-        #sec01, #sec02{width:90%; max-width:1200px; margin:0 auto 60px; padding-top:80px; position:relative; overflow:hidden; }
-        .titleTxt{font-size:24px; border:2px solid #000; color:#000; font-weight:600; padding:10px; width:150px; cursor:pointer; position:absolute; top:10px; left:0;  }
-        #sec01 .bear{text-align:center; }
-        #sec01 img{box-shadow:0 0 30px rgba(0,0,0,0.6); border:1px solid #fff; border-radius:50%; overflow:hidden;  }
-        
-        #sec02 .title{text-align:center;  }
-        #sec02 .title h2{font-size:36px; color:#525252 }
-        #sec02 .title p{font-size:22px; color:#929292; }
-        #sec02 .row{margin-top:30px; }
-        #sec02 .row .btn{float:left; width:24.25%; margin-left:1%; padding:10px; background:#fff; border:1px solid #ccc; border-radius:10px; overflow:hidden;  }
-        #sec02 .row .btn:first-child{margin-left:0; }
-        #sec02 .row .btn img{max-width:100%; border-radius:10px;}
-        #sec02 .row .btn .txts h3{font-size:22px;}
-        #sec02 .row .btn .txts p{font-size:16px; color:#999; }
+        .desc{
+            border:5px dotted #222;
+            background-color:#ffd9a0;
+            width:350px;
+            padding:20px;
+            margin-right:20px;
+            float:left;
+        }
+        #clip-border{background-clip:border-box;}
+        #clip-padding{background-clip:padding-box;}
+        #clip-content{background-clip:content-box;}
     </style>
 </head>
 <body>
-    <section id="sec01">
-        <button class="titleTxt" onclick="location.href='#sec01'">연습문제1</button>
-        <div class="bear">
-            <img src="./images/bear.jpg" alt="곰돌이">
+    <div id="container">
+        <div class="desc" id="clip-border">
+            <h1>레드향</h1>
+            <p>껍질에 붉은 빛이 돌아 <b>레드향</b>이라 불린다.</p>
+            <p>레드향은 <em>한라봉과 귤을 교배</em>한 것으로<br>일반 귤보다 2~3배 크고, 과육이 붉고 통통하다.</p>
         </div>
-    </section>
-    <hr/>
-    <section id="sec02">
-        <button class="titleTxt" onclick="location.href='#sec02'">연습문제2</button>
-        <div class="title">
-            <h2>여가 시간 즐기기</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, in! Lorem ipsum dolor sit amet.</p>
+        <div class="desc" id="clip-padding">
+            <h1>레드향</h1>
+            <p>껍질에 붉은 빛이 돌아 <b>레드향</b>이라 불린다.</p>
+            <p>레드향은 <em>한라봉과 귤을 교배</em>한 것으로<br>일반 귤보다 2~3배 크고, 과육이 붉고 통통하다.</p>
         </div>
-        <div class="row">
-            <button type="button" class="btn">
-                <img src="./images/tr-1.png" alt="도심 투어">
-                <div class="txts">
-                    <h3>도심 투어</h3>
-                    <p>Lorem ipsum dolor sit. Lorem ipsum dolor sit.</p>
-                </div>
-            </button>
-            <button type="button" class="btn">
-                <img src="./images/tr-2.png" alt="바다 즐기기">
-                <div class="txts">
-                    <h3>바다 즐기기</h3>
-                    <p>Lorem ipsum dolor sit amet. Lorem, ipsum dolor</p>
-                </div>
-            </button>
-            <button type="button" class="btn">
-                <img src="./images/tr-3.png" alt="등산 도전하기">
-                <div class="txts">
-                    <h3>등산 도전하기</h3>
-                    <p>Lorem ipsum dolor sit amet. Lorem, ipsum dolor.</p>
-                </div>
-            </button>
-            <button type="button" class="btn">
-                <img src="./images/tr-4.png" alt="관광지 투어">
-                <div class="txts">
-                    <h3>관광지 투어</h3>
-                    <p>Lorem, ipsum dolor. Lorem ipsum dolor sit amet.</p>
-                </div>
-            </button>
+        <div class="desc" id="clip-content">
+            <h1>레드향</h1>
+            <p>껍질에 붉은 빛이 돌아 <b>레드향</b>이라 불린다.</p>
+            <p>레드향은 <em>한라봉과 귤을 교배</em>한 것으로<br>일반 귤보다 2~3배 크고, 과육이 붉고 통통하다.</p>
         </div>
-    </section>
+    </div>
 </body>
 </html>
