@@ -5,7 +5,7 @@
     <title>과제 9</title>
     <style>
         body{margin:0; padding:0;}
-        #sec01, #sec02, #sec03, #sec04{width:90%; max-width:1200px; margin:0 auto 60px; padding-top:80px; position:relative; overflow:hidden; }
+        .sec{width:90%; max-width:1200px; margin:0 auto 60px; padding-top:80px; position:relative; overflow:hidden; }
         .titleTxt{font-size:24px; border:2px solid #000; color:#000; font-weight:600; padding:10px; width:150px; cursor:pointer; position:absolute; top:10px; left:0;  }
         
         #sec01 #container{width:100%; height:300px; background:url(./images/bg1.jpg);}
@@ -57,14 +57,121 @@
         #clip-border{background-clip:border-box;}
         #clip-padding{background-clip:padding-box;}
         #clip-content{background-clip:content-box;}
+
+        #sec05 .grad1{
+            width:500px;
+            height:300px;
+            border-radius:10px;
+            margin-bottom:20px;
+            background:linear-gradient(-30deg, #fff, #0077ff);
+        }
+
+        #sec05 .grad2{
+            width:500px;
+            height:300px;
+            border-radius:10px;
+            margin-bottom:20px;
+            background:linear-gradient(45deg, #f00, #fff);
+        }
+
+        #sec05 .grad3{
+            width:500px;
+            height:300px;
+            border-radius:10px;
+            background:linear-gradient(to bottom, #06f, #fff 30%, #06f);
+        }
+
+        #sec06 .grad1{
+            width:500px;
+            height:300px;
+            border-radius:10px;
+            background:linear-gradient(yellow, red 20px);
+        }
+
+        #sec06 .grad2{
+            width:500px;
+            height:300px;
+            border-radius:10px;
+            background:linear-gradient(#06f, #ccc 10%);
+        }
+
+        #sec07 .grad1{
+            width:500px;
+            height:300px;
+            border-radius:100%;
+            background:radial-gradient(#fff, yellow, red);
+        }
+
+        #sec07 .grad2{
+            width:500px;
+            height:300px;
+            border-radius:50%;
+            background:radial-gradient(circle, #fff, yellow, red);
+        }
+        #sec08 li {
+                display:inline-block;
+                width:300px;
+                height:300px;
+                border:1px solid black;
+                margin:10px;
+        }	
+        #sec08 #div1{
+                background:darkgreen;
+                background:radial-gradient(circle closest-side at 30% 40%, white, yellow, green);  /* 그러데이션 중심에서 가장 가까운 측면에 닿을 때까지 */
+        }
+        #sec08 #div2{
+                background:darkgreen;
+                background:radial-gradient(circle closest-corner at 30% 40%, white, yellow, green);  /* 그러데이션 중심에서 가장 가까운 꼭짓점에 닿을 때까지 */
+        }
+        #sec08 #div3{
+                background:darkgreen;
+                background:radial-gradient(circle farthest-side at 30% 40%, white, yellow, green);  /* 그러데이션 중심에서 가장 멀리 떨어진 측면에 닿을 때까지 */
+        }
+        #sec08 #div4{
+                background:darkgreen;
+                background:radial-gradient(circle farthest-corner at 30% 40%, white, yellow, green);  /* 그러데이션 중심에서 가장 멀리 떨어진 꼭짓점에 닿을 때까지 */
+        }
+        #sec09 .grad{
+            width:300px;
+            height:300px;
+            border-radius:50%;
+            box-shadow: 10px 5px 10px #ccc;
+            background:radial-gradient(circle at 20% 20%, white, blue)
+        }
+        #sec10 div{
+            width:500px;
+            height:300px;
+			margin:10px;
+        }
+        #sec10 .grad1{
+                background:red;
+                background:repeating-linear-gradient(yellow, red 20px);
+        }
+        #sec10 .grad2{
+                background:#ccc;
+                background:repeating-radial-gradient(circle, white, #ccc 10%);
+        }
+        #sec11 div{
+            width:500px;
+            height:300px;
+			margin:10px;
+        }
+        #sec11 .grad1{
+                background:red;
+                background:repeating-linear-gradient(yellow, yellow 20px, red 20px, red 40px);
+        }
+        #sec11 .grad2{
+                background:#ccc;
+                background:repeating-radial-gradient(circle, white, white 10%, #ccc 10%, #ccc 20%);
+        }
     </style>
 </head>
 <body>
-    <section id="sec01">
+    <section id="sec01" class="sec">
         <button class="titleTxt" onclick="location.href='#sec01'">연습문제1</button>
         <div id="container"></div>
     </section>
-    <section id="sec02">
+    <section id="sec02" class="sec">
         <button class="titleTxt" onclick="location.href='#sec02'">연습문제2</button>
         <div id="container">
             <h1>이지스퍼블리싱</h1>
@@ -77,7 +184,7 @@
             </ul>
         </div>
     </section>
-    <section id="sec03">
+    <section id="sec03" class="sec">
         <button class="titleTxt" onclick="location.href='#sec03'">연습문제3</button>
         <div id="container">
             <div id="bg1">
@@ -97,7 +204,7 @@
             </div>
         </div>
     </section>
-    <section id="sec04">
+    <section id="sec04" class="sec">
         <button class="titleTxt" onclick="location.href='#sec04'">연습문제4</button>
         <div id="container">
             <div class="desc" id="clip-border">
@@ -116,6 +223,45 @@
                 <p>레드향은 <em>한라봉과 귤을 교배</em>한 것으로<br>일반 귤보다 2~3배 크고, 과육이 붉고 통통하다.</p>
             </div>
         </div>
+    </section>
+    <section id="sec05" class="sec">
+        <button class="titleTxt" onclick="location.href='#sec05'">연습문제5</button>
+        <div class="grad1"></div>
+        <div class="grad2"></div>
+        <div class="grad3"></div>
+    </section>
+    <section id="sec06" class="sec">
+        <button class="titleTxt" onclick="location.href='#sec06'">연습문제6</button>
+        <div class="grad1"></div>
+        <div class="grad2"></div>
+    </section>
+    <section id="sec07" class="sec">
+        <button class="titleTxt" onclick="location.href='#sec07'">연습문제7</button>
+        <div class="grad1"></div>
+        <div class="grad2"></div>
+    </section>
+    <section id="sec08" class="sec">
+        <button class="titleTxt" onclick="location.href='#sec08'">연습문제8</button>
+        <ul>
+            <li id="div1"></li>
+            <li id="div2"></li>
+            <li id="div3"></li>
+            <li id="div4"></li>
+        </ul>
+    </section>
+    <section id="sec09" class="sec">
+        <button class="titleTxt" onclick="location.href='#sec09'">연습문제9</button>
+        <div class="grad"></div>
+    </section>
+    <section id="sec10" class="sec">
+        <button class="titleTxt" onclick="location.href='#sec10'">연습문제10</button>
+        <div class="grad1"></div>
+        <div class="grad2"></div>
+    </section>
+    <section id="sec11" class="sec">
+        <button class="titleTxt" onclick="location.href='#sec11'">연습문제11</button>
+        <div class="grad1"></div>
+        <div class="grad2"></div>
     </section>
 </body>
 </html>
