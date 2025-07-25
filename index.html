@@ -5,39 +5,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        table,
-        tr,
-        td {
-            border: 1px solid black;
-            height: auto;
-            margin: 0;
-            padding: 0;
-            border-collapse: collapse;
-            text-align:center;
-        }
-        th, td{
-            width: 100px;
-            padding:10px 0
-        }
-        iframe{width:100%; height:calc(100vh - 220px); margin-top:20px; }
-    </style>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-    <h1>나의 과제방</h1>
-    <table>
-        <tr>
-            <th>8강</th>
-            <td colspan="2"><a href="./work/day07_0723/index.html" target="page">과제보기</a></td>
-        </tr>
-        <tr>
-            <th>9강</th>
-            <td><a href="./work/day07_0724/index.html" target="page">실습하기</a></td>
-            <td><a href="./work/day07_0724/result.html" target="page">과제보기</a></td>
-        </tr>
-    </table>
-    <iframe src="" frameborder="0" name="page"></iframe>
+    <header>
+        <div class="logo">
+            <a href="/">YD</a>
+            <p>Yuchae DataRoom</p>
+        </div>
+    </header>
+    <section id="main01">
+        <div class="txtbox">
+            <h1>Yuchae's Data Room</h1>
+            <p>유채의 과제 데이터 자료실 입니다.</p>
+            <button type="button" class="btn" onclick="location.href='#main02'"><i class="fa-solid fa-arrow-down"></i></button>
+        </div>
+    </section>
+    <section id="main02">
+        <h1>나의 과제방</h1>
+        <table>
+            <tr>
+                <th>CSS 1</th>
+                <td colspan="2"><a href="./work/day07_0723/index.html" target="page">과제보기</a></td>
+            </tr>
+            <tr>
+                <th>CSS 2</th>
+                <td><a href="./work/day07_0724/index.html" target="page">실습하기</a></td>
+                <td><a href="./work/day07_0724/result.html" target="page">과제보기</a></td>
+            </tr>
+            <tr>
+                <th>JS 1</th>
+                <td><a href="javascript:alert('실습중 입니다.')">실습하기</a></td>
+                <td><a href="javascript:alert('과제중 입니다.')">과제보기</a></td>
+            </tr>
+        </table>
+    </section>
+    <section id="main03">
+        <iframe src="" frameborder="0" name="page"></iframe>
+    </section>
+    <script>
+        let lastScroll = 0;
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', function () {
+            const currentScroll = window.scrollY || document.documentElement.scrollTop;
+            if (currentScroll > 100 && currentScroll > lastScroll) {
+                header.style.display = 'none';
+            } else {
+                header.style.display = '';
+            }
+            lastScroll = currentScroll;
+        });
+    </script>
 </body>
 
 </html>
