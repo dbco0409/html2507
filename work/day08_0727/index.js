@@ -1,7 +1,7 @@
 // 선언부
 let r = document.getElementById('result');
-let num1 = 9;
-let num2 = 4;
+let num1 = 8;
+let num2 = 3;
 let result = 0;
 
 // 구현부
@@ -27,6 +27,7 @@ r.innerText += `\n[곱하기*] ${result}`;
 
 // 재사용
 result = num1 / num2;
+result = Math.round(result * 100) / 100; 
 console.log(`결과: ${result}`);
 r.innerText += `\n[나누기/] ${result}`;
 
@@ -52,6 +53,7 @@ r_arr[0] = num1 + num2;
 r_arr[1] = num1 - num2;
 r_arr[2] = num1 * num2;
 r_arr[3] = num1 / num2;
+r_arr[3] = Math.round(r_arr[3] * 100) / 100;
 r_arr[4] = num1 % num2;
 r_arr[5] = num1++;
 r_arr[6] = num1--;
