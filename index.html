@@ -24,38 +24,39 @@
         </div>
     </section>
     <section id="main02">
-        <h1>나의 과제방</h1>
-        <table>
-            <tr>
-                <th>CSS 1</th>
-                <td colspan="2"><a href="./work/day07_0723/index.html" target="page">과제보기</a></td>
-            </tr>
-            <tr>
-                <th>CSS 2</th>
-                <td><a href="./work/day07_0724/index.html" target="page">실습하기</a></td>
-                <td><a href="./work/day07_0724/result.html" target="page">과제보기</a></td>
-            </tr>
-            <tr>
-                <th>JS 1</th>
-                <td><a href="javascript:alert('실습중 입니다.')">실습하기</a></td>
-                <td><a href="javascript:alert('과제중 입니다.')">과제보기</a></td>
-            </tr>
-        </table>
+        <div class="nav">
+            <h1>나의 과제방</h1>
+            <table>
+                <tr>
+                    <th>CSS 1</th>
+                    <td colspan="2"><a href="./work/day07_0723/index.html" target="page">과제보기</a></td>
+                </tr>
+                <tr>
+                    <th>CSS 2</th>
+                    <td><a href="./work/day07_0724/index.html" target="page">실습하기</a></td>
+                    <td><a href="./work/day07_0724/result.html" target="page">과제보기</a></td>
+                </tr>
+                <tr>
+                    <th>JS 1</th>
+                    <td><a href="javascript:alert('실습중 입니다.')">실습하기</a></td>
+                    <td><a href="javascript:alert('과제중 입니다.')">과제보기</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="content">
+            <iframe src="" frameborder="0" name="page"></iframe>
+        </div>
     </section>
-    <section id="main03">
-        <iframe src="" frameborder="0" name="page"></iframe>
-    </section>
+
     <script>
-        let lastScroll = 0;
         const header = document.querySelector('header');
         window.addEventListener('scroll', function () {
-            const currentScroll = window.scrollY || document.documentElement.scrollTop;
-            if (currentScroll > 100 && currentScroll > lastScroll) {
+            const currentScroll = document.documentElement.scrollTop;
+            if (currentScroll > 100) {
                 header.style.display = 'none';
             } else {
                 header.style.display = '';
             }
-            lastScroll = currentScroll;
         });
     </script>
 </body>
