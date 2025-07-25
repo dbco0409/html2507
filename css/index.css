@@ -16,9 +16,10 @@ html, body{height:100%; margin:0; padding:0; }
 }
 
 @keyframes orbitDot {
-  0%   { transform: rotate(0deg) translateY(20px) rotate(0deg);  }
-  50% { transform: rotate(360deg) translateX(-30px) rotate(-360deg); }
-  100%   { transform: rotate(180deg) translateY(20px) rotate(180deg); }
+  0%   { transform: rotate(0deg) translate(20px) rotate(0deg);  }
+  50% { transform: rotate(360deg) translate(40px, -20px) rotate(-360deg); }
+  80%   { transform: rotate(180deg) translate(-20px, 20px) rotate(180deg); }
+  100%   { transform: rotate(0deg) translate(20px) rotate(0deg); }
 }
 
 @keyframes moveShadow {
@@ -86,7 +87,7 @@ header .menu .bar{width:100%; height:2px; background:#fff; margin-bottom:10px; d
 #main01 .txtbox .btn:hover{transform: translateY(6px);}
 
 #main02{width:95%; margin:auto; overflow:hidden; }
-#main02 .nav{float:left; width:20%; margin-right:2%;}
+#main02 .nav{float:left; width:20%; padding-top:20px; margin-right:2%;}
 table,tr,td {
             border: 1px solid black;
             height: auto;
@@ -99,5 +100,5 @@ th, td{
             width: 100px;
             padding:10px 0
 }
-#main02 .content{float:left; width:78%; margin:auto; height:90vh; margin-top:20px;  }
+#main02 .content{float:left; width:78%; margin:auto; height:100vh; margin-top:20px;  }
 iframe{width:100%; height:100%; margin-top:20px; background:#fff; }
