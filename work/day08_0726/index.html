@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>반응형 이미지 만들기</title>
+  <style>
+    * {
+      margin:0;
+      box-sizing: border-box;
+    }
+    body{margin:0; padding:0;}
+    .sec{width:100%; margin:0 auto 60px; padding-top:80px; position:relative; overflow:hidden; }
+    .sec.m0{margin:0; }
+
+    #sec01 {      
+      background:url('images/bg5.jpg') no-repeat left top fixed;
+      background-size:cover;   
+      display: flex;
+      justify-content: center;   
+    }
+    #sec01 button {
+      background-color:#ccc;
+      font-size: 1.2em; 
+      padding:1em 2em;
+      border:none;
+      border-radius:5px;    
+      box-shadow:1px 1px 2px #fff;
+    }
+   
+    #sec02 .container {
+      width:700px;
+      display:flex;
+      background-color:#eee;
+      border:1px solid #222;
+      margin-bottom:30px;
+    }
+    #sec02 .box {
+      padding:5px 45px;
+      margin:5px;   
+	  width:80px;
+    }   
+    #sec02 .box:nth-child(odd) {
+      background-color: rgb(255, 187, 0);
+    }           
+    #sec02 .box:nth-child(even) {
+      background-color: rgb(35, 220, 35);
+    }
+    #sec02 p {
+      text-align: center;
+      font-weight: bold;
+    }
+     #sec02 #opt1{
+        flex-direction: row;
+     }
+     #sec02 #opt2{
+        flex-direction: row-reverse;
+     }
+     #sec02 #opt3{
+        flex-direction: column;
+     }
+     #sec02 #opt4{
+        flex-direction: column-reverse;
+     }
+
+     #sec03 .container {
+      display:flex;  /* 플렉스 컨테이너 지정 */
+      justify-content: row; /* 주축의 방향을 지정 */
+      background-color:#eee;
+      border:1px solid #222;
+      margin-bottom:30px;
+    }
+    #sec03 .box {
+      padding:5px 45px;
+      margin:5px;   
+	  	width:80px;
+      background-color:#222;   
+    }                
+    #sec03 p {
+      color:#fff;
+      text-align: center;
+    }
+
+     #sec03 #opt1{
+        flex-wrap:nowrap;
+     }
+
+     #sec03 #opt2{
+        flex-wrap:wrap;
+     }
+     #sec03 #opt3{
+        flex-wrap: wrap-reverse;
+     }
+     #sec04 .container {
+      display:flex;
+      background-color:#eee;
+      border:1px solid #222;
+      margin-bottom:10px;
+    }             
+    #sec04 .box {
+      padding:5px 45px;
+      margin:5px;   
+	  	width:80px;
+    }   
+    #sec04 .box:nth-child(odd) {
+      background-color: rgb(255, 187, 0);
+    }           
+    #sec04 .box:nth-child(even) {
+      background-color: rgb(35, 220, 35);
+    }
+    #sec04 p {
+      text-align: center;
+      font-weight: bold;
+    }
+
+    #sec04 #opt1{
+        flex-flow:row wrap;
+     }
+     #sec04 #opt2{
+        flex-flow:row nowrap;
+     }
+
+     #sec05 .container {
+      display:flex;  /* 플렉스 컨테이너 지정 */
+      background-color:#eee;
+      border:1px solid #222;
+      margin-bottom:30px;
+    }                  
+    #sec05 .box {
+      padding:5px 45px;
+      margin:5px;   
+	  	width:80px;
+    }   
+    #sec05 .box:nth-child(odd) {
+      background-color: rgb(255, 187, 0);
+    }           
+    #sec05 .box:nth-child(even) {
+      background-color: rgb(35, 220, 35);
+    }
+    #sec05 p {
+      text-align: center;
+      font-weight: bold;
+    }
+
+    #sec05  #opt1{
+        justify-content: flex-start;
+     }
+     #sec05  #opt2{
+        justify-content: flex-end;
+     }
+     #sec05  #opt3{
+        justify-content: center;
+     }
+     #sec05  #opt4{
+        justify-content: space-between;
+     }
+     #sec05  #opt5{
+        justify-content: space-around;
+     }
+     #sec05  #opt6{
+        justify-content: space-evenly;
+     }
+
+     #sec06 .container {
+      width:100%;
+      height:150px;
+      display:flex;
+      justify-content: flex-start;  /* 주축 정렬 방법 - 시작점 기준 */
+      background-color:#eee;
+      border:1px solid #222;
+      margin-bottom:20px;
+    }                                       
+    #sec06 .box {
+      padding:5px 45px;
+      margin:5px;   
+	  	width:80px;
+    }   
+    #sec06 .box:nth-child(odd) {
+      background-color: rgb(255, 187, 0);
+    }           
+    #sec06 .box:nth-child(even) {
+      background-color: rgb(35, 220, 35);
+    }
+    #sec06 p {
+      text-align: center;
+      font-weight: bold;
+    }
+    #sec06 #opt1{
+        align-items: flex-start; /* 교차축 정렬 방법 - 시작점 기준 */
+     }
+     #sec06 #opt2{
+        align-items: flex-end; /* 교차축 정렬 방법 - 끝점 기준 */
+     }
+     #sec06 #opt3{
+        align-items: center; /* 교차축 정렬 방법 - 중앙 기준 */
+     }
+     #sec06 #opt4{
+        align-items: baseline; /* 교차축 정렬 방법 - 기준선 기준 */
+     }
+     #sec06 #opt5{
+        align-items: stretch; /* 교차축 정렬 방법 - 늘리기 */
+     }
+
+     #sec07 .container {
+      width:450px;
+      height:150px;
+      background-color:#eee;
+      border:1px solid #222;
+      margin-bottom:20px;
+      display:flex;         /* 플렉스 컨테이너 지정 */
+      align-items: center;  /* 교차축의 중앙에 배치 */
+    }                                        
+    #sec07 .box {
+      padding:5px 45px;
+      margin:5px;   
+	  	width:80px;
+    }   
+    #sec07 .box:nth-child(odd) {
+      background-color: rgb(255, 187, 0);
+    }           
+    #sec07 .box:nth-child(even) {
+      background-color: rgb(35, 220, 35);
+    }
+    #sec07 p {
+      text-align: center;
+      font-weight: bold;
+    }
+    #sec07 #box1{
+        align-self: flex-start;
+    }
+    #sec07 #box3{
+        align-self: stretch;
+    }
+
+    #sec08 .container {
+      float:left;
+      width:300px;
+      height:300px;
+      display:flex;          /* 플렉스 컨테이너 지정 */
+      flex-flow: row wrap;   /* 왼쪽에서 오른쪽, 여러 줄 표시 */
+      border:1px solid #222;
+      background-color:#eee;
+      margin:30px;
+    }
+    #sec08 .box {
+      padding:10px;
+      margin:5px;  
+      width: 80px; 
+    } 
+    #sec08 .box:nth-child(odd) {
+      background-color: rgb(255, 187, 0);
+    }           
+    #sec08 .box:nth-child(even) {
+      background-color: rgb(35, 220, 35);
+    }
+    #sec08 p {
+      text-align: center;
+      font-weight: bold;
+    }
+    #sec08 #opt1{
+        align-content: flex-start;
+     }
+     #sec08 #opt2{
+        align-content: flex-end;
+     }
+     #sec08 #opt3{
+        align-content: center;
+     }
+     #sec08 #opt4{
+        align-content: space-between;
+     }
+     #sec08 #opt5{
+        align-content: space-around;
+     }
+     #sec08 #opt6{
+        align-content: stretch;
+     }
+
+</style>
+</head>
+<body>
+    <section id="sec01" class="sec">
+       <button>클릭!</button>
+    </section>
+    <section id="sec02" class="sec">
+        <div class="container" id="opt1">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+        </div>
+        <div class="container" id="opt2">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+        </div>
+        <div class="container" id="opt3">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+        </div>
+        <div class="container" id="opt4">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+        </div>  
+    </section>
+    <section id="sec03" class="sec">
+        <div class="container" id="opt1">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+            <div class="box"><p>5</p></div>
+            <div class="box"><p>6</p></div>    
+        </div>
+        <div class="container" id="opt2">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+            <div class="box"><p>5</p></div>
+            <div class="box"><p>6</p></div>    
+        </div>
+        <div class="container" id="opt3">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+            <div class="box"><p>5</p></div>
+            <div class="box"><p>6</p></div>    
+        </div>
+    </section>
+    <section id="sec04" class="sec">
+        <div class="container" id="opt1">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+            <div class="box"><p>5</p></div>
+            <div class="box"><p>6</p></div>    
+        </div>
+        <div class="container" id="opt2">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+            <div class="box"><p>5</p></div>
+            <div class="box"><p>6</p></div>    
+        </div>
+    </section>
+    <section id="sec05" class="sec">
+        <div class="container" id="opt1">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+        </div>
+        <div class="container" id="opt2">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+        </div>
+        <div class="container"  id="opt3">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+        </div>
+        <div class="container" id="opt4">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+        </div>            
+        <div class="container" id="opt5">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+        </div> 
+    </section>
+    <section id="sec06" class="sec">
+        <div class="container" id="opt1">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+        </div>
+        <div class="container" id="opt2">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+        </div>
+        <div class="container" id="opt3">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+        </div>
+        <div class="container" id="opt4">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p style="font-size:14px;">2</p></div>
+            <div class="box"><p style="font-size:25px;">3</p></div>
+            <div class="box"><p style="font-size:10px">4</p></div>
+        </div>       
+        <div class="container" id="opt5">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+        </div> 
+    </section>
+    <section id="sec07" class="sec">
+        <div class="container">
+            <div class="box" id="box1"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box" id="box3"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+        </div>
+    </section>
+    <section id="sec08" class="sec">
+        <div class="container" id="opt1">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+        </div>
+        <div class="container" id="opt2">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+        </div>
+        <div class="container" id="opt3">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+        </div>
+        <div class="container" id="opt4">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+        </div>            
+        <div class="container" id="opt5">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+        </div>    
+        <div class="container" id="opt6">
+            <div class="box"><p>1</p></div>
+            <div class="box"><p>2</p></div>
+            <div class="box"><p>3</p></div>
+            <div class="box"><p>4</p></div>
+        </div>  
+    </section>
+</body>
+</html>
