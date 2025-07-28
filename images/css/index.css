@@ -1,0 +1,189 @@
+@font-face {
+    font-family: 'NanumMyeongjo';
+    src: url('https://cdn.jsdelivr.net/gh/wizfile/font/NanumMyeongjo.eot');
+    src:url('https://cdn.jsdelivr.net/gh/wizfile/font/NanumMyeongjo.woff') format('woff');
+    font-style: normal;
+}
+
+html, body{height:100%; margin:0; padding:0; cursor:pointer; }
+.cursor {
+  background: #ffffc8cc;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ffffc8cc, 0 0 20px #ffffc8cc;
+  height: 20px;
+  pointer-events: none;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  z-index: 9999;
+}
+
+.dot_ani .dot {width: 5px;height: 5px;background: #fffda5;border-radius: 50%;position: absolute; top:0; left:0; z-index:3;}
+.dot_ani .dot1 {
+  animation: orbitDot 20s, moveShadow 2s linear infinite;
+  width: 6px;
+  height: 6px;
+  top: 43%;
+  left: 40%;
+}
+
+@keyframes orbitDot {
+  0%   { transform: rotate(0deg) translate(20px) rotate(0deg);  }
+  50% { transform: rotate(360deg) translate(40px, -20px) rotate(-360deg); }
+  80%   { transform: rotate(180deg) translate(-20px, 20px) rotate(180deg); }
+  100%   { transform: rotate(0deg) translate(20px) rotate(0deg); }
+}
+
+@keyframes moveShadow {
+    0% {box-shadow: 0 0 0 0 #fbff1666;}
+    30% {box-shadow: 0 0 20px 10px #fbff1666;}
+    50% {box-shadow: 0 0 20px 10px #fbff1666;}
+    80% {box-shadow: 0 0 20px 10px #fbff1666;}
+    100% {box-shadow: 0 0 0 0 #fbff1666;}
+}
+
+.dot_ani .dot2,
+.dot_ani .dot4,
+.dot_ani .dot5,
+.dot_ani .dot6,
+.dot_ani .dot7,
+.dot_ani .dot8,
+.dot_ani .dot9 {
+  width: 3px;
+  height: 3px;
+  background: #ffffff;
+  box-shadow: 0 0 0 0 #fbff1666;
+  z-index: 2;
+  animation: twinkle 4s infinite ease-in-out;
+  opacity: 0;
+}
+
+.dot_ani .dot3 {
+  width: 3px;
+  height: 3px;
+  animation: sparkleThenFall 6s infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
+
+@keyframes sparkleThenFall {
+  0% {
+    transform: translate(70vw, 14vh) scale(1);
+    opacity: 0.2;
+  }
+  20% {
+    opacity: 1;
+    transform: translate(70vw, 14vh) scale(1.5);
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(40vw, 70vh) scale(0.5);
+    opacity: 0;
+  }
+}
+
+
+header{position:fixed; top:0; left:0; width:100%; height:60px; z-index:9;  }
+header .logo{position:absolute; top:20px; left:2%; text-align:center; transition: top 0.5s;}
+header.active .logo{top:-50px;}
+header .logo a{font-size:24px; color: #b85bfa; text-shadow:0px 0px 10px #421d69; text-decoration: none; font-weight:900;}
+header .logo p{color:rgba(255,255,255); font-size:14px; margin:0;  }
+
+header #menu{position:absolute; top:15px; right:2%; width:50px; height:50px; background: linear-gradient(45deg, #3f00a5, #a24be1) #3f00a5; border:0; border-radius:50%; display:flex; justify-content: center; align-items: center; flex-direction: column; z-index:9; }
+header #menu .bar{width:20px; height:2px; background:#fff; margin-bottom:5px; display:block; }
+#main01{position:relative; width:100%; height:100%; background:url(../images/main2.569c2e42df8fe296c091.jpg) top center no-repeat; background-size:cover; }
+#main01 .txtbox{position:absolute; top:50%; left:50%; transform: translate(-50%, -50%); text-align: center; }
+#main01 .txtbox h1{font-size:38px; margin:0; color:#fff; text-shadow:2px 2px 4px rgba(185, 185, 185, 0.5); font-family: 'NanumMyeongjo'; font-weight:200; }
+#main01 .txtbox p{font-size:14px; color:#fff; margin-bottom:20px;  }
+#main01 .txtbox .btn{background:transparent; border:1px solid #fff; color:#fff; font-size:24px; margin-top:10px; padding:10px 30px; transition: transform .5s;  }
+#main01 .txtbox .btn:hover{text-shadow:0px 0px 6px rgb(255,255,255); }
+#main01 .txtbox .btn:active{transform: translate(0, 5px);}
+
+
+#nav{position: fixed;top: 0;right: -100%; width: 100%; max-width:320px; height: 100%; background: linear-gradient(45deg, #3f00a5, #a24be1) #3f00a5; z-index: 9; transition: right 0.5s ease, opacity 0.5s ease;  opacity: 0;}
+#nav.active { right: 0; opacity: 1;pointer-events: auto; }
+#nav .close{position:absolute; right:10px; top:20px; color:#fff; background:transparent; border:0; font-size:24px; cursor:pointer;}
+#nav ul{position: relative; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; list-style: none; padding: 0; margin: 0; }
+#nav ul a{display: block; color:#fff; font-size:24px; margin: 10px 0; text-decoration: none; transition: color 0.3s;}
+#nav ul a:hover{color:#e6d0f9;text-shadow: 0 0 10px #ef3bff; }
+#nav ul a.active{color:#e6d0f9;text-shadow: 0 0 10px #f83bff; } 
+#nav ul a i{margin-right: 10px; color:#fff; transition: color 0.3s;}
+
+.About {display:flex;justify-content: flex-start; align-items: center; height:100vh; }
+.Aboutbox1 { width:70%; }
+.Aboutbox1 .inner{width: 90%;max-width:1200px;margin:auto; flex-direction: column;display:flex; justify-content: center;text-align:left;}
+.Aboutbox1 h3{display:flex; color:#000;font-size:3em; font-weight:900; margin:0;width:140px;   letter-spacing: -2.5px;  }
+.Aboutbox1 h3 .c-red{color:#ff0000;}
+.Aboutbox1 .textGroup{display:flex; color:#000; flex-direction: column;}
+.Aboutbox1 .textGroup h5{ font-size:2em;  font-weight:900;  margin:30px 0 0;  letter-spacing: -1px;}
+.Aboutbox1 .textGroup h6{ font-size:0.9em;margin:20px 0 0;  }
+.Aboutbox1 .textGroup p{font-size:1em;  margin-top:30px;  letter-spacing: -0.5px; word-break:keep-all}
+.Aboutbox3{ width:30%;  text-align:left; }
+.Aboutbox3 .inner{ width: 90%; max-width:1200px; padding:30px 0px 10px;  margin:auto;  flex-direction: column; display:flex;}
+.Aboutbox3 h3{ font-weight:900; font-size:1.5em;  color:#000;  margin-bottom:20px;  letter-spacing: -0.8px;}
+.Aboutbox3 h3 .c-red{ color:#ff0000;}
+.Aboutbox3 .textBox{ display:flex;  align-items: flex-start; justify-content: center; flex-direction: column; }
+.Aboutbox3 .group{display:flex;  margin-bottom:20px; flex-direction: column; }
+.Aboutbox3 .group .cate{display:flex; font-weight:900; font-size:1.1em;margin-bottom:10px; }
+.Aboutbox3 .group ul{ margin:0;  padding-left:20px; }
+.Aboutbox3 .group ul li{ margin-bottom:5px; font-weight:600;}
+
+.port .titBox{width:100%; display:flex; justify-content: center; align-items: center; text-align:center; flex-direction: column; }
+.port .titBox h3{display:flex; color:#000;font-size:1em; font-weight:600; letter-spacing: -1px;  }
+.port .titBox h1{font-size:3em;  font-weight:900;  margin:0 0 30px;  letter-spacing: -2.5px;}
+.port .titBox .btn{background-color: #fff; border:1px solid #000; padding:5px 20px; transition: 0.5s background-color;}
+.port .titBox .btn:hover{background-color:#3f00a5; color:#fff; }
+.port .contentBox{display:flex; width:90%; margin:auto; justify-content: space-between; align-items: stretch; flex-wrap:wrap; margin-top:50px; }
+.port .contentBox .content{width:32%; margin-left:1%; margin-bottom:1%; display:flex; flex-direction: column; position:relative; border-radius:30px; overflow: hidden;}
+.port .contentBox .content:first-child{margin-left:0;}
+.port .contentBox .content:nth-child(3n+1){margin-left:0;}
+.port .contentBox .content .imgBox{width:100%; height:400px; overflow:hidden; position:relative; }
+.port .contentBox .content .imgBox img{width:100%; height:100%; object-fit:cover; }
+.port .contentBox .content .textBox{display:flex; width:100%; height:100%; padding:0px; background: linear-gradient(45deg, #3f00a5, #a24be1) #3f00a5; position:absolute; left:0; top:0; transition: opacity 0.3s ease; text-align:left; flex-direction: column; opacity: 0; justify-content: center; align-items: center;}
+.port .contentBox .content .textBox h6{font-size:1.2em; font-weight:600; color:#fff; letter-spacing: -0.5px; margin:0 0 20px; text-transform: uppercase;}
+.port .contentBox .content .textBox h4{font-size:2em; font-weight:600; color:#fff; letter-spacing: -0.5px; margin:0 0 40px; text-transform: uppercase;}
+.port .contentBox .content .textBox p{font-size:1em; color:#fff; width:80%; line-height:1.5em; margin:0; letter-spacing: -0.5px; word-break: keep-all; text-align: center;}
+.port .contentBox .content:hover .textBox{opacity: 1;}
+
+
+.contactBox{
+  width:100%;
+  height:100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.contactBox h3{
+  font-weight:900;
+  font-size:1.5em; 
+  color:#000; 
+  margin-bottom:20px; 
+  letter-spacing: -0.8px;
+}
+
+.contactBox h3 .c-red{
+  color:#ff0000;
+}
+
+.contactBox p{
+  color:#000;
+  font-size:1em;
+  line-height:1.3em;
+  text-align: center;
+}
+.contactBox p span{
+  color:#000;
+  font-weight:600; 
+}
+
+.contactBox a{
+  text-decoration: none;
+  color:#000;
+}

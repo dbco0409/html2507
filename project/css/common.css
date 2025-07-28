@@ -1,0 +1,43 @@
+@charset "utf-8";
+@import url("./fonts.css");
+
+/*Common*/
+.animate-box{opacity:0;}
+*{margin:0;padding:0}
+/*Layer*/
+html{overflow: scroll; overflow-x: hidden;}
+body{width:100%; padding:0px!important; background-color:#fff;*word-break:break-all;-ms-word-break:break-all}
+body,h1,h2,h3,h4,h5,h6,th,td,input,textarea,select,option,div,button{font-family: "NanumSquareRound"; font-weight:400;}
+img,fieldset,iframe{border:0 none}
+ul,ol,li{list-style:none}
+em,address{font-style:normal}
+img,input,select,textarea{vertical-align:middle}
+a{color:#000; text-decoration:none;cursor:pointer}
+a:hover{color:#000; text-decoration:none}
+button,label{cursor:pointer;_cursor /**/:hand}
+button *{position:relative}
+textarea{overflow:auto}
+*{ box-sizing: border-box; }
+input::-ms-clear,input::-ms-reveal{display:none;width:0;height:0;}
+input::-webkit-search-decoration,input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,input::-webkit-search-results-decoration{display:none;}
+input[type="number"]::-webkit-outer-spin-button,input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0;}
+#ui-datepicker-div{z-index:999 !important;}
+
+/* 폰트스타일 시작 */
+
+.ns{font-family: "NanumSquare"; font-weight:400;}
+.nsB{font-family: "NanumSquare"; font-weight:600;}
+.nsrR{font-family: "NanumSquareRound"; font-weight:400;}
+.nsrB{font-family: "NanumSquareRound"; font-weight:600;}
+
+.bold{font-weight:600;}
+.medi{font-weight:500;}
+.regu{font-weight:400;}
+.demi{font-weight:300;}
+.light{font-weight:100;}
+
+/* 폰트스타일 끝 */
+input:focus, 
+textarea:focus, 
+button.btn:focus{box-shadow:none; outline:none; }

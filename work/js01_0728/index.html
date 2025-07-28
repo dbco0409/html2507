@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>js</title>
+</head>
+<body>
+    <!-- 결과물을 뿌려줄 영역 -->
+    <p id="result">결과</p>
+    <script>
+      //선언부
+      let name = "Kim";
+      let classRoom = 204;
+
+      //구현부
+      let result = name + "님, "+classRoom+"호 강의실로 입장하세요."; 
+
+      //출력부
+      console.log(result);
+      console.log(`${name}님, ${classRoom}호 강의실로 입장하세요.`);
+      document.getElementById("result").innerText=result;
+
+
+      //선언부
+      let spring="봄";
+      let summer = "여름";
+      let fall = "가을";
+      let winter="겨울";
+      result;
+      let result2;
+
+      //구현부
+      result = "3월은"+spring+", 8월은 "+summer+", 10월은 "+fall+", 1월은 "+winter+"이다.";
+      result2 = `${spring}은 따뜻해! ${summer}은 뜨거워. ${fall}은 시원해, ${winter}은 추워!`;
+
+      //출력부
+      console.log(result)
+      console.log(result2)
+      document.getElementById("result").innerText+='\n'+result2;
+      document.getElementById("result").innerHTML+='\n<h2>'+result+'</h2>';
+
+      // 선언부
+      let num1 = 8;
+      let num2 = 3;
+      let res=new Array(9);
+
+      //구현부
+      res[0]="덧셈:"+(num1 + num2);
+      res[1]="뺄셈:"+(num1 - num2);
+      res[2]="곱셈:"+(num1 * num2);
+      res[3]="나눗셈:"+(num1 / num2).toFixed(2);
+      res[4]="나머지:"+(num1 % num2).toFixed(1);
+      res[5]="후행++:"+(num1++);
+      res[6]="++선행:"+(++num1);
+      res[7]="후행--:"+(num2--);
+      res[8]="--선행:"+(--num2);
+
+      //출력부
+      document.getElementById("result").innerHTML+='\n';
+      for(i=0; i<res.length; i++){
+        console.log(res[i]);
+        document.getElementById("result").innerHTML+=`<p>${res[i]}</p>`;
+      }
+
+      // 선언부
+      let num3 = 10;
+      let num4 = num3 + 3;
+
+      //구현부 & 출력부
+      console.log("=연산: "+num4);
+
+      num4 += num3;
+      console.log("+=연산: "+num4);
+
+      num4 -= num3;
+      console.log("-=연산: "+num4);
+
+      num4 *= num3;
+      console.log("*=연산: "+num4);
+
+      num4 /= num3;
+      console.log("/=연산: "+num4);
+
+      num4 %= num3;
+      console.log("%=연산 "+num4);
+
+
+      //선언부
+      var d= document;
+      num1 = 3;
+      num2 = 5;
+      result;
+
+      // 구현부 & 출력부
+      result = num1 + num2;
+      d.getElementById("result").innerHTML+=`<h3>${result}</h3>`;
+
+      result = num1 - num2;
+      d.getElementById("result").innerHTML+=`<h3>${result}</h3>`;
+
+      result = num1 * num2;
+      d.getElementById("result").innerHTML+=`<h3>${result}</h3>`;
+
+      result = num1 / num2;
+      d.getElementById("result").innerHTML+=`<h3>${result}</h3>`;
+
+      result = num1 % num2;
+      d.getElementById("result").innerHTML+=`<h3>${result.toFixed(2)}</h3>`;
+
+      result = num1++;
+      d.getElementById("result").innerHTML+=`<h3>${result}, 변수는 ${num1}</h3>`;
+
+      result = ++num1;
+      d.getElementById("result").innerHTML+=`<h3>${result}, 변수는 ${num1}</h3>`;
+
+      result = num2--;
+      d.getElementById("result").innerHTML+=`<h3>${result}, 변수는 ${num2}</h3>`;
+
+      result = --num2;
+      d.getElementById("result").innerHTML+=`<h3>${result}, 변수는 ${num2}</h3>`;
+
+      // 비교 연산자
+      // 선언부
+      let n1 = 3;
+      let n2 = 4;
+
+      //출력부
+      //n1과 n2가 같니?
+      result = (n1 == n2)
+      d.getElementById("result").innerHTML+= result;
+      d.getElementById("result").innerHTML+="\n";
+
+      //n1과 n2가 타입도 같니?
+      result = (n1 === n2)
+      console.log(n1 === n2);
+      d.getElementById("result").innerHTML+= result;
+      d.getElementById("result").innerHTML+="\n";
+
+      //n1과 n2가 타입도 같니?
+      result = (n1 !== n2)
+      console.log(n1 === n2);
+      d.getElementById("result").innerHTML+= result;
+      d.getElementById("result").innerHTML+="\n";
+
+      // n1가 n2보다 작니?
+      result = (n1 > n2)
+      console.log(n1 === n2);
+      d.getElementById("result").innerHTML+= result;
+      d.getElementById("result").innerHTML+="\n";
+
+      // n1가 n2보다 작거나 같니?
+      result = (n1 <= n2)
+      console.log(n1 === n2);
+      d.getElementById("result").innerHTML+= result;
+      d.getElementById("result").innerHTML+="\n";
+
+      // n1가 n2보다 크니?
+      result = (n1 > n2)
+      console.log(n1 === n2);
+      d.getElementById("result").innerHTML+= result;
+      d.getElementById("result").innerHTML+="\n";
+
+      // n1가 n2보다 크거나 같니?
+      result = (n1 >= n2)
+      console.log(n1 === n2);
+      d.getElementById("result").innerHTML+= result;
+      d.getElementById("result").innerHTML+="\n";
+
+    </script>
+</body>
+</html>
