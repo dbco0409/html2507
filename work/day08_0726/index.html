@@ -275,7 +275,111 @@
      #sec08 #opt6{
         align-content: stretch;
      }
-
+     #sec09 .container {
+      width:650px;
+      height:150px;
+      display:flex;
+      align-items:center;
+      background-color:#eee;
+      border:1px solid #222;
+      gap:10px;
+    }                              
+    #sec09 .box {    
+      padding: 10px;
+      width: 80px;
+    }   
+    #sec09 .box:nth-child(odd) {
+      background-color: rgb(255, 187, 0);
+    }           
+    #sec09 .box:nth-child(even) {
+      background-color: rgb(35, 220, 35);
+    }
+    #sec09 p {
+      text-align: center;
+      font-weight: bold;
+    }
+    #sec10 .container {
+      width:800px;
+      height:100px;
+      display:flex;
+      border:1px solid #222;
+      gap: 10px;
+    }                               
+    #sec10 .box {
+      flex-basis: 150px; 
+      background-color: #222; 
+    }
+    #sec10 .box:nth-child(odd) {
+      background-color: #ffc400;
+    }
+    #sec10 .box:nth-child(even) {
+      background-color: #a6ff00;
+    }
+    #sec10 p {
+      font-weight: bold;
+      text-align: center;
+    }
+    #sec11 .container {
+      width:800px;
+      height:100px;
+      display:flex;
+      border:1px solid #222;
+      gap: 10px;
+    }                               
+    #sec11 .box {
+      flex-basis: 150px;  
+    }
+    #sec11 #box1{
+      flex-grow:1;
+    }
+    #sec11 #box2{
+      flex-grow:1;
+    }
+    #sec11 #box4{
+      flex-grow:2;
+    }
+    #sec11 .box:nth-child(odd) {
+      background-color: #ffc400;
+    }
+    #sec11 .box:nth-child(even) {
+      background-color: #a6ff00;
+    }
+    #sec11 p {
+      font-weight: bold;
+      text-align: center;
+    }
+    #sec12 .container {
+      width:800px;
+      height:100px;
+      display:flex;
+      border:1px solid #222;
+      gap: 10px;
+    }                               
+    #sec12 .box {
+      flex-basis: 300px; 
+    }
+    #sec12 #box1{
+      flex-shrink: 1;
+    }
+    #sec12 #box2{
+      flex-shrink: 0;
+    }
+    #sec12 #box3{
+      flex-shrink: 1;
+    }
+    #sec12 #box4{
+      flex-shrink: 2;
+    }
+    #sec12 .box:nth-child(odd) {
+      background-color: #ffc400;
+    }
+    #sec12 .box:nth-child(even) {
+      background-color: #a6ff00;
+    }
+    #sec12 p {
+      font-weight: bold;
+      text-align: center;
+    }
 </style>
 </head>
 <body>
@@ -457,6 +561,38 @@
             <div class="box"><p>3</p></div>
             <div class="box"><p>4</p></div>
         </div>  
+    </section>
+    <section id="sec09" class="sec">
+      <div class="container">
+        <div class="box"><p>1</p></div>
+        <div class="box"><p>2</p></div>
+        <div class="box"><p>3</p></div>
+        <div class="box"><p>4</p></div>
+        <div class="box"><p>5</p></div>
+      </div>  
+    </section>
+    <section id="sec10" class="sec">
+      <div class="container">
+        <div class="box"><p>가나다라마</p></div>
+        <div class="box"><p>가나다라마바사</p></div>
+        <div class="box"><p>ABCDE</p></div>
+      </div>
+    </section>
+    <section id="sec11" class="sec">
+      <div class="container">
+        <div class="box" id="box1"><p>1</p></div>
+        <div class="box" id="box2"><p>2</p></div>
+        <div class="box" id="box3"><p>3</p></div>
+        <div class="box" id="box4"><p>4</p></div>
+      </div>
+    </section>
+    <section id="sec12" class="sec">
+      <div class="container">
+        <div class="box" id="box1"><p>1</p></div>
+        <div class="box" id="box2"><p>2</p></div>
+        <div class="box" id="box3"><p>3</p></div>
+        <div class="box" id="box4"><p>4</p></div>
+      </div>
     </section>
 </body>
 </html>
