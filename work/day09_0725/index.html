@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>반응형 이미지 만들기</title>
+  <style>
+    * {
+      margin:0;
+      box-sizing: border-box;
+    }
+    body{margin:0; padding:0;}
+    .sec{width:100%; margin:0 auto 60px; padding-top:80px; position:relative; overflow:hidden; }
+    .sec.m0{margin:0; }
+
+    #sec01{
+      display:grid;
+      grid-template-columns: 100px 200px 300px;
+      grid-template-rows: 50px 100px;
+    }
+    #sec01 .items{
+        border: 1px solid #222;
+        padding:10px;      
+        font-size: 20px;
+        text-align: center;
+    }   
+    #sec01 .items:nth-child(even){
+        background-color:#ffc400;
+    }
+    #sec02 .container {
+      display:grid;
+      grid-template-columns: 100px 200px 300px;  
+      grid-auto-rows:100px;       
+    }
+    
+    #sec02 .items{
+      border: 1px solid #222;
+      padding:10px;      
+      font-size: 20px;
+      text-align: center;
+    }   
+    #sec02 .items:nth-child(even){
+      background-color:#ffc400;
+    }
+    #sec03 .container {
+        width:600px;
+        border: 1px solid #ccc;
+        display:grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: minmax(100px, auto);
+    }
+     #sec03 .items{
+        padding:10px;
+        font-size: 16px;
+    }   
+    #sec03  .items:nth-child(odd){
+        background-color:#ffc400;
+    }
+    #sec04 .container {
+        width:800px;
+        border: 1px solid #ccc;
+        display:grid;        
+        margin-bottom: 20px;
+      }
+      #sec04 .container-1{
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      }
+      #sec04 .container-2{
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      }
+      #sec04 h1 {
+        font-size:24px;
+      }
+      #sec04 .items{
+        border: 1px solid #222;
+        padding:10px;     
+        font-size: 20px;
+        text-align: center; 
+      }   
+      #sec04 .items:nth-child(odd){
+        background-color:#d6faff;
+      }
+      #sec04 .items:nth-child(even){
+        background-color:#00b7ff;
+      }
+      #sec05 .container {
+        width: 600px;        
+        border: 2px solid #222;
+        display:grid;
+        grid-template-columns:repeat(3, 1fr);  /* 열 3개 */ 
+        gap:20px 30px;
+      }
+      #sec05 .items{
+        padding:10px;
+        font-size: 20px;        
+        text-align: center;
+      }   
+      #sec05 .items:nth-child(odd){
+        background-color:#d6faff;
+      }
+      #sec05 .items:nth-child(even){
+        background-color:#00b7ff;
+      }
+
+      #sec06 .container{
+        width:700px;
+        display:grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(3, 100px);
+        gap:1rem;
+      }
+      #sec06 .box{
+        padding:15px;
+        color:#fff;
+        text-align:center;
+      }   
+      #sec06 .box1 {
+        background-color:#3689ff;
+        grid-column: 1 / -1;
+        grid-row-start: 1;
+      }
+      #sec06 .box2 {
+        background-color:#00cf12;
+        grid-column-start: 1;
+        grid-row:2 / -1;
+      }
+      #sec06 .box3 {
+        background-color:#ff9019;
+        grid-column: 2 / -1;
+        grid-column-start: 2;
+      }
+      #sec06 .box4 {
+        background-color:#ffd000;
+        grid-column-start: 2;
+        grid-row-start: 3;
+      }
+      #sec06 .box5 {
+        background-color:#ff3f3f;
+      }
+
+      #sec07 .container{
+        width:700px;
+        display:grid;
+        grid-template-rows: repeat(3, 100px);
+        grid-template-areas: 
+          "box1 box1 box1"
+          "box2 box3 box3"
+          "box2 box4 box5";
+        gap: 1rem;
+      }
+      #sec07 .box{
+        padding:15px;
+        color:#fff;
+        text-align:center;
+      }   
+      #sec07 .box1 {
+        background-color:#3689ff;
+        grid-area:box1;
+      }
+      #sec07 .box2 {
+        background-color:#00cf12;
+        grid-area:box2;
+      }
+      #sec07 .box3 {
+        background-color:#ff9019;
+        grid-area:box3;
+        }
+      #sec07 .box4 {
+        background-color:#ffd000;
+        grid-area:box4;
+      }
+      #sec07 .box5 {
+        background-color:#ff3f3f;
+        grid-area:box5;
+      }
+</style>
+</head>
+<body>
+    <section id="sec01" class="sec">
+      <div class="items">1</div>
+      <div class="items">2</div>
+      <div class="items">3</div>
+      <div class="items">4</div>
+      <div class="items">5</div>
+      <div class="items">6</div>
+    </section>
+    <section id="sec02" class="sec">
+      <div class="container">
+        <div class="items">1</div>
+        <div class="items">2</div>
+        <div class="items">3</div>
+        <div class="items">4</div>
+        <div class="items">5</div>
+        <div class="items">6</div>
+      </div>
+    </section>
+    <section id="sec03" class="sec">
+      <div class="container">
+        <div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, reprehenderit.Lorem ipsum dolor, sit amet consectetur adipisicing elit. </div>
+        <div class="items">Lorem ipsum dolor, sit amet consectetur adipisicing elit.Lorem ipsum dolor, sit amet consectetur adipisicing elit</div>
+        <div class="items">Lorem ipsum dolor sit amet.Lorem ipsum dolor, sit amet consectetur adipisicing elit</div>
+        <div class="items">Lorem ipsum dolor sit.Lorem ipsum dolor, sit amet consectetur adipisicing elit</div>
+        <div class="items">Lorem, ipsum dolor.</div>
+        <div class="items">Lorem, ipsum dolor. Lorem ipsum dolor sit amet.</div>
+      </div>
+    </section>
+    <section id="sec04" class="sec">
+      <h1>auto-fit일 때</h1>
+      <div class="container container-1">            
+        <div class="items">1</div>
+        <div class="items">2</div>
+        <div class="items">3</div>
+        <div class="items">4</div>
+        <div class="items">5</div>
+      </div>
+
+      <h1>auto-fill일 때</h1>
+      <div class="container container-2">            
+        <div class="items">1</div>
+        <div class="items">2</div>
+        <div class="items">3</div>
+        <div class="items">4</div>
+        <div class="items">5</div>
+      </div>
+    </section>
+
+    <section id="sec05" class="sec">
+      <div class="container">
+        <div class="items">1</div>
+        <div class="items">2</div>
+        <div class="items">3</div>
+        <div class="items">4</div>
+        <div class="items">5</div>
+        <div class="items">6</div>
+      </div>
+    </section>
+
+    <section id="sec06" class="sec">
+      <div class="container">
+        <div class="box box1">box1</div>
+        <div class="box box2">box2</div>
+        <div class="box box3">box3</div>
+        <div class="box box4">box4</div>
+        <div class="box box5">box5</div>
+      </div>
+    </section>
+
+    <section id="sec07" class="sec">
+      <div class="container">
+        <div class="box box1">box1</div>
+        <div class="box box2">box2</div> 
+        <div class="box box3">box3</div>
+        <div class="box box4">box4</div>
+        <div class="box box5">box5</div>
+      </div>
+    </section>
+</body>
+</html>

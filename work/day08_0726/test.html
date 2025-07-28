@@ -10,10 +10,102 @@
       box-sizing: border-box;
     }
     body{margin:0; padding:0;}
-    
+    .card{
+      background-color: #fff;
+      color:#222;
+      padding:3.5em 1em;
+      border-radius:0.6em;
+      box-shadow:0 0 2.4em rgba(25,0,58,0.1);
+      cursor:pointer;
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .card p{
+      font-weight: 300;
+      text-transform: uppercase;
+      margin:0.5em 0 2em 0;
+      letter-spacing:2px;
+    }
+    .social{
+      width:50%;
+      margin:auto;
+      display:flex;
+      justify-content: space-between;
+    }
+
+    @media screen and (min-width: 1024px) {
+      #container {
+        padding:1em;
+      }
+      .row{
+        display: flex;
+        flex-wrap: wrap;
+        padding:2em 1em;
+        text-align: center;
+      }
+      .card{
+        padding:5em 1em;
+      }
+      .column{
+        flex:0 0 33.33%;
+        max-width:33.33%;
+        padding:0 1em;
+      }
+    }
 </style>
 </head>
 <body>
-    
+  <div id="container">
+    <h1>Our Team</h1>
+    <div class="row">
+      <div class="column">
+        <div class="card">
+          <div class="img-container">
+            <img src="images/member-1.png">
+          </div>
+          <h2>James Turner</h2>
+          <p>Founder</p>
+          <div class="social">
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+            <a href="#"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card">
+          <div class="img-container">
+            <img src="images/member-2.png">
+          </div>
+          <h2>Luna Hall</h2>
+          <p>Developer</p>
+          <div class="social">
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+            <a href="#"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card">
+          <div class="img-container">
+            <img src="images/member-3.png">
+          </div>
+          <h2>Hope Carpenter</h2>
+          <p>Designer</p>
+          <div class="social">
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+            <a href="#"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>반응형 이미지 만들기</title>
+  <style>    
+    /* 이미지 스타일링 */
+    .container{
+      display:flex;
+      flex-wrap: wrap;
+    }
+    .pic{
+      flex-basis:768px;
+    }
+    .pic img {
+      width: 100%; /* 이미지가 .pic 에 가득차도록 */
+      height: auto; /* 이미지의 비율을 유지 */
+    } 
+
+    @media screen and (min-width:768px){
+      .pic{flex-basis:90%}
+    }
+
+    @media screen and (min-width:769px) and (max-width:1024px){
+      .container{justify-content: center;}
+      .pic{flex-basis:49%}
+    }
+
+    @media screen and (min-width:1025px){
+      .pic{flex-basis:30%}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="pic">
+      <img src="images/kitten-1.jpg" alt="아기 고양이 사진">
+    </div>
+    <div class="pic">
+      <img src="images/kitten-2.jpg" alt="아기 고양이 사진">
+    </div>
+    <div class="pic">
+      <img src="images/kitten-3.jpg" alt="아기 고양이 사진">
+    </div>
+  </div>
+</body>
+</html>
