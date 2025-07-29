@@ -45,7 +45,7 @@ $(document).ready(function() {
 		}, 50);
 	}
 
-	startTyping(); 
+	startTyping();
 
 	var main01_slider = new Swiper('#main01 .main_slider', {
 		slidesPerView: 1,
