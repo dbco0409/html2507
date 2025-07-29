@@ -77,3 +77,8 @@
 #sec15 #signup input[readonly] {  /* 읽기 전용 필드의 스타일 */
 	border:none;
 }
+
+#sec15 :is(h1, h2, h3):hover{
+	color:red;
+}
+
