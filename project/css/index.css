@@ -1,1 +1,24 @@
-html, body{height:100%; margin:0; padding:0; cursor:pointer; }
+@charset "utf-8";
+@import url("./common.css");
+
+#main01{width:100%; margin-top:0; margin-bottom:100px; }
+#main01 span.typing-txt{display: none;}
+#main01 .txtBox{width:90%; max-width:1200px; margin:auto; text-align: center; padding-top:180px; height:100vh; min-height:572px; margin-bottom:80px;}
+#main01 .txtBox #ani{color:var(--purple); }
+#main01 .txtBox #ani h1{font-size:140px; font-weight:900; height:170px; }
+#main01 .txtBox #ani .typing-sm{height:60px; font-size:44px; font-weight:600; color:#636363; display:block; }
+#main01 .txtBox .typing { font-size:140px; display: inline-block; animation-name: cursor;  animation-duration: 0.3s;  animation-iteration-count: infinite; } 
+#main01 .main_slider{width:100%; height:100vh; min-height:572px; display:flex; flex-direction: column; position:relative;}
+#main01 .main_slider .slide01{width:100%; height:100%; background:var(--background-gradient)}
+#main01 .main_slider .slide02{width:100%; height:100%; background:var(--background-gradient)}
+#main01 .main_slider .slide03{width:100%; height:100%; background:#940000}
+#main01 .main_slider .swiper-slide .txtBox{display:flex; width:90%; max-width:1200px; height:100%; margin:Auto; justify-content: center; flex-direction: column; text-align: left; }
+#main01 .main_slider .swiper-slide .txtBox h2{font-size:56px; margin-bottom:50px; color:#fff; font-weight:900;}
+#main01 .main_slider .swiper-slide .txtBox p{font-size:20px; color:#fff;  font-weight:300; }
+#main01 .main_slider .pages{}
+
+@keyframes cursor{ 
+  0%{border-right: 1px solid #fff} 
+  50%{border-right: 1px solid #000} 
+  100%{border-right: 1px solid #fff} 
+}

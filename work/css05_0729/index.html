@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>고급 선택자</title>
+  <link rel="stylesheet" href="css/register1.css">
+  <link rel="stylesheet" href="css/register2.css">
+  <style>
+    * {
+      margin:0;
+      box-sizing: border-box;
+    }
+    body{margin:0; padding:0;}
+    .sec{width:100%; margin:0 auto 60px; padding-top:80px; position:relative; overflow:hidden; }
+    .sec.m0{margin:0; }
+
+    #sec01 {
+      width:600px;
+      margin:20px auto;
+    }
+    #sec01 + p{color:blue; }
+    #sec01 h1 + p{background-color:#222; color:#fff }
+    #sec01 h1 ~ p{color:rgb(255, 255, 255);}
+    #sec01 p {
+      width:500px;
+      padding:10px;
+      background-color:#fff;
+      border:1px solid #ccc;
+      line-height:2;
+    }
+
+    #sec03 ul {
+		 list-style:none;
+   }
+	  #sec03 li {
+      width:120px;	 
+      display:inline-block;
+      margin:10px;
+	  }
+	  #sec03 li a {
+      padding: 5px 20px;
+      font-size: 14px;
+      text-decoration: none;
+      font-weight: bold;
+	  }
+
+    #sec03 a[href]{
+      background:yellow;
+      border:1px solid #ccc;
+      font-weight:normal;
+    }
+    #sec04 ul { 
+      list-style:none;
+    }
+    #sec04 li {
+      padding: 5px 30px;
+    }
+    #sec04 li a {
+      font-size: 16px;
+      text-decoration: none;
+      color:#000;
+    }
+
+    #sec04 a[target=_blank]{
+      padding-right:30px;
+      background:url(images/newwindow.png) no-repeat center right;
+    }
+
+    #sec05 ul { list-style:none; }
+	  #sec05 li {
+		 display:inline-block;
+		 margin:10px;
+	  }
+		#sec05 li a {
+			padding: 5px 20px;
+			font-size: 14px;
+			color: blue;
+			text-decoration: none;
+		}
+		#sec05 .flat {
+      background:#eee;
+      border:1px solid #222;
+		}
+    #sec05 li a[class~=button]{
+      box-shadow:rgba(0,0,0,0.4) 4px 4px;
+      border-radius:5px;
+    }
+    #sec06 ul { list-style:none; }
+    #sec06 li {
+      display:inline-block;
+      margin:10px;
+    }
+    #sec06 li a {
+      padding: 5px 20px;
+      font-size: 14px;
+      color: blue;
+      text-decoration: none;
+    }
+
+    #sec06 li a[title|=us]{
+      background:url(images/us.png) no-repeat left center;
+      padding:5px 25px;
+    }
+
+    #sec06 li a[title|=jp]{
+      background:url(images/jp.png) no-repeat left center;
+      padding:5px 25px;
+    }
+
+    #sec06 li a[title|=chn]{
+      background:url(images/ch.png) no-repeat left center;
+      padding:5px 25px;
+    }
+
+    #sec07 a[href $=hwp] {
+      background:url(images/hwp_icon.gif) center right no-repeat;
+      padding-right:25px;
+    }
+
+    
+    #sec07 a[href $=xls] {
+      background:url(images/excel_icon.gif) center right no-repeat;
+      padding-right:25px;
+    }
+  
+    #sec08 a[href *=w3]{
+      background:blue;
+      color:white;
+    }
+
+    #sec10 .container {
+      width: 960px;
+      margin : 0 auto;
+    }
+    #sec10 .navi{
+      width:960px;
+      height:60px;
+      padding-bottom:10px;
+      border-bottom:2px solid #ccc;
+    }
+    #sec10 .navi ul{
+      list-style: none;
+      padding-top:10px; 
+      padding-bottom:5px;
+    }
+    #sec10 .navi ul li {
+      float:left;
+      width:150px;
+      padding:10px;   
+    }
+
+    #sec10 .navi a:link, #sec10 .navi a:visited{
+      display:block;
+      font-size:14px;
+      color:#000;
+      padding:0px;
+      text-decoration:none;
+      text-align:center;
+    }
+
+    #sec10 .navi a:hover, #sec10 .navi a:focus{
+      background-color:#222;
+      color:#fff;
+    }
+
+    #sec10 .navi a:active{
+      background-color:#f00;
+    }
+
+    #sec11 .container {
+      width: 960px;
+      margin : 0 auto;
+    }
+    #sec11 .navi{
+      width:960px;
+      height:60px;
+      padding-bottom:10px;
+      border-bottom:2px solid #ccc;
+    }
+
+    #sec11 .navi ul{
+      list-style: none;
+      padding-top:10px; 
+      padding-bottom:5px;
+    }
+    #sec11 .navi ul li {
+      display:inline-block;
+      width:150px;
+      padding:10px;   
+    }
+    #sec11 .navi a:link, #sec11 .navi a:visited {
+      font-size:14px;
+      padding: 10px; 
+      text-decoration: none;  /* 밑줄 없음 */
+
+    }
+    #sec11 .navi a:hover,  #sec11 .navi a:focus {
+      background-color:#222;  /* 배경색 */
+      color:#fff;  /* 글자색 */
+    }
+
+    #sec11 .navi a:active {
+      background-color:#f00;  /* 배경색 */
+    }
+
+    #sec11 #signup {
+      background:#fff;
+      border:1px solid #222;
+      border-radius: 5px;
+      padding: 20px;
+      width: 400px;	
+      margin:30px auto;
+    }
+
+    #sec11 #signup fieldset {
+      border: 1px solid #ccc;
+      margin-bottom: 30px;
+    }
+        
+    #sec11 #signup legend {
+      font-size: 16px;
+      font-weight: bold;
+      padding-left:5px;
+      padding-bottom: 10px;	
+    }
+  
+    #sec11 #signup ul li {
+      line-height: 30px;
+      list-style: none;
+      padding: 5px 10px;
+      margin-bottom: 2px;
+    }
+          
+    #sec11 #signup fieldset:first-of-type label {
+      float: left;
+      font-size: 13px;
+      width: 60px;
+    }
+
+    #sec11 #signup input[type=text], input[type=tel] {
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      padding: 5px;
+      width: 200px;
+    }
+
+    #sec11 #signup button {	
+      border: 1px solid #222;
+      border-radius: 20px;
+      display: block;
+      font: 16px 맑은고딕,굴림,돋움;
+      letter-spacing: 1px;
+      margin: auto;
+      padding: 7px 25px; 
+    }
+
+    #sec11 #signup b {
+      float: left;
+      font-size: 13px;
+      width: 110px;
+    }
+
+    #sec11 #signup input:checked + label{
+      color:red;
+      font-weight:bold; 
+    }
+
+    #sec12 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      gap: 20px;
+    }
+    #sec12 .container {
+      width: 300px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    #sec12 .container p:first-child{
+      background-color:#fc2;
+    }
+  </style>
+</head>
+<body>
+  <section id="sec01" class="sec">
+    <h1>예약 방법 & 사용 요금</h1>
+    <p>아직 온라인 예약 신청이 준비되어 있지 않습니다. <br>전화(xxx-xxxx-xxxx)로 문의 바랍니다.</p>
+    <div>
+      <p>가족실(2~4인) : 60,000원/일</p>
+      <p>도미토리(4인 공용) : 25,000원/일</p>
+  </section>   
+  <section id="sec02" class="sec">
+    <form id="signup">
+      <fieldset>
+        <legend>로그인 정보</legend>
+        <ul>
+          <li>
+            <label for="userid">아이디</label>
+            <input id="userid" name="userid" type="text" required autofocus>
+          </li>
+          <li>
+            <label for="pwd1">비밀번호</label>
+            <input id="pwd1" name="pwd1" type="password"  required>
+          </li>
+          <li>
+            <label for="pwd2">비밀번호 확인</label>
+            <input id="pwd2" name="pwd2" type="password" required>
+          </li>  
+          <li>
+            <label for="level">회원 등급</label>
+            <input id="level" name="level" type="text" readonly value="준회원">
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>개인 정보</legend>
+        <ul>
+          <li>
+            <label for="fullname">이름</label>
+            <input id="fullname" name="fullname" type="text" placeholder="5자미만 공백없이" required>
+          </li>
+          <li>
+            <label for="email">메일 주소</label>
+            <input id="email" name="email" type="email" placeholder="abcd@domain.com" required autocomplete="off">
+          </li>
+          <li>
+            <label for="tel">연락처</label>
+            <input id="tel" name="tel" type="tel" autocomplete="off">
+          </li>  
+        </ul>
+      </fieldset>
+      <fieldset>
+        <button type="submit"> 제출 </button> 
+      </fieldset>
+    </form>
+  </section>
+  <section id="sec03" class="sec">
+      <ul>
+        <li><a>메인 메뉴 : </a></li>
+        <li><a href="#">메뉴 1</a></li>
+        <li><a href="#">메뉴 2</a></li>
+        <li><a href="#">메뉴 3</a></li>
+        <li><a href="#">메뉴 4</a></li>
+      </ul>
+  </section>
+  <section id="sec04" class="sec">
+    <ul>
+      <li><a href="hhttps://html.spec.whatwg.org" target="_blank">HTML</a></li>
+      <li><a href="https://www.w3.org/TR/selectors">CSS Selector Level 3</a></li>
+      <li><a href="https://www.w3.org/TR/css3-mediaqueries">미디어쿼리</a></li>		
+    </ul>
+  </section>
+  <section id="sec05" class="sec">
+    <ul>
+      <li><a href="#" class="flat">메뉴 1</a></li>
+      <li><a href="#" class="flat">메뉴 2</a></li>
+      <li><a href="#" class="button">메뉴 3</a></li>
+      <li><a href="#" class="flat button" >메뉴 4</a></li>
+    </ul>
+  </section>
+  <section id="sec06" class="sec">
+    <ul>
+      <li>외국어 서비스 : </li>
+      <li><a href="#" title="us-english">영어</a></li>
+      <li><a href="#" title="jp">일본어</a></li>
+      <li><a href="#" title="chn">중국어</a></li>
+    </ul>
+  </section>
+  <section id="sec07" class="sec">
+    <h3>회사 소개 파일 다운 받기</h3>
+    <ul>
+      <li><a href="intro.hwp">hwp 파일</a></li>
+      <li><a href="intro.xls">엑셀 파일</a></li>
+    </ul>
+  </section>
+  <section id="sec08" class="sec">
+    <h1>HTML5 참고 사이트 </h1>
+    <p>(아래 링크 중 파란색 배경의 링크는 W3C 사이트로 연결됩니다.)</p>
+    <ul>
+      <li><a href="https://html.spec.whatwg.org/">HTML 표준안 사이트</a></li>
+      <li><a href="https://caniuse.com/">HTML 지원 여부 체크</a></li>
+      <li><a href="https://www.w3.org/TR/css3-mediaqueries">미디어쿼리</a></li>		
+    </ul>
+  </section>
+  <section id="sec09" class="sec">
+    <form id="signup">
+      <fieldset>
+        <legend>로그인 정보</legend>
+        <ul>
+          <li>
+            <label for="userid">아이디</label>
+            <input id="userid" name="userid" type="text" required autofocus>
+          </li>
+          <li>
+            <label for="pwd1">비밀번호</label>
+            <input id="pwd1" name="pwd1" type="password"  required>
+          </li>
+          <li>
+            <label for="pwd2">비밀번호 확인</label>
+            <input id="pwd2" name="pwd2" type="password" required>
+          </li>  
+          <li>
+            <label for="level">회원 등급</label>
+            <input id="level" name="level" type="text" readonly value="준회원">
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>개인 정보</legend>
+        <ul>
+          <li>
+            <label for="fullname">이름</label>
+            <input id="fullname" name="fullname" type="text" placeholder="5자미만 공백없이" required>
+          </li>
+          <li>
+            <label for="email">메일 주소</label>
+            <input id="email" name="email" type="email" placeholder="abcd@domain.com" required autocomplete="off">
+          </li>
+          <li>
+            <label for="tel">연락처</label>
+            <input id="tel" name="tel" type="tel" autocomplete="off">
+          </li>  
+        </ul>
+      </fieldset>
+      <fieldset>
+        <button type="submit"> 제출 </button> 
+      </fieldset>
+    </form>
+  </section>
+  <section id="sec10" class="sec">
+    <div class="container">
+      <nav class="navi">
+        <ul>
+          <li><a href="#">이용 안내</a></li>
+          <li><a href="#">객실 소개</a></li>
+          <li><a href="#">예약 방법 및 요금</a></li>
+          <li><a href="#">예약하기</a></li>
+        </ul>
+      </nav>  
+    </div>
+  </section>
+  <section id="sec11" class="sec">
+    <div class="container">
+      <nav class="navi">
+        <ul>
+          <li><a href="ps-1.html#intro">이용 안내</a></li>
+          <li><a href="ps-1.html#room">객실 소개</a></li>
+          <li><a href="ps-1.html#reservation">예약 방법 및 요금</a></li>
+          <li><a href="ps-2.html">예약하기</a></li>
+        </ul>
+      </nav>  
+
+      <form id="signup">    
+        <fieldset>
+          <legend>개인 정보</legend>
+          <ul>
+            <li>
+              <label for="fullname">이름</label>
+              <input id="fullname" name="fullname" type="text" required>
+            </li>
+            <li>
+              <label for="tel">연락처</label>
+              <input id="tel" name="tel" type="tel">
+            </li>          
+          </ul>
+        </fieldset>
+        <fieldset>  
+          <legend>객실 형태</legend>
+          <ul>
+            <li>
+              <input type="radio" name="room" id="basic">
+              <label for="basic">기본형(최대 2인)</label>
+            <li>      
+            <li>
+              <input type="radio" name="room" id="family">
+              <label for="family">가족형(최대 8인)</label>
+            </li>          
+          </ul>
+        </fieldset>
+        <button type="submit"> 제출 </button> 
+      </form>
+    </div>
+  </section>
+  <section id="sec12" class="sec">
+    <div class="container">
+      <p>첫 번째</p>
+      <div>두 번째</div>
+      <p>세 번째</p>
+      <div>네 번째</div>
+    </div>
+    <div class="container">
+      <div>혼자~</div>
+    </div>
+  </section>
+</body>
+</html>

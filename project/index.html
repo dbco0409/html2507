@@ -19,17 +19,17 @@
 </head>
 
 <body>
-    <header>
+    <header id="header">
         <div class="top">
             <nav class="topmenu">
-                <button type="button" class="btn">즐겨찾기 추가</button>
+                <button type="button" class="btn btn-bookmark">즐겨찾기 추가</button>
                 <a href="">로그인/회원가입</a>
                 <a href="">예약확인</a>
             </nav>
         </div>
         <div class="wrap">
             <div class="logo">
-                <a href="/">WECAR</a>
+                <a href="/">WE<span class="lo2">C</span>AR</a>
             </div>
             <nav class="menu">
                 <a href="">단기 렌트</a>
@@ -41,13 +41,81 @@
     </header>
     <div id="fixedbg"></div>
     <section id="main01">
+        <div class="txtBox">
+            <div id="ani">
+                <h1>WECAR IS  
+                <span class="typing-txt"></span> 
+                <span class="typing"></span> 
+                </h1>
+                <h5 class="typing-sm"></h5>
+            </div>
+            <div class="car" id="car3d"></div>
+            <script>
+                import * as THREE from "https://cdn.skypack.dev/three@0.126.1";
+                import { FBXLoader } from "https://cdn.jsdelivr.net/npm/three@0.117.1/examples/jsm/loaders/FBXLoader.js";
+                // 3D 렌더링 영역
+                const container = document.getElementById('car3d');
+
+                // Three.js 기본 설정
+                const scene = new THREE.Scene();
+                const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+                camera.position.set(0, 80, 200);
+
+                const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+                renderer.setSize(container.clientWidth, container.clientHeight);
+                container.appendChild(renderer.domElement);
+
+                // 조명 추가
+                const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+                scene.add(ambientLight);
+                const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+                directionalLight.position.set(100, 200, 100);
+                scene.add(directionalLight);
+
+                // FBX 모델 로드
+                const loader = new FBXLoader();
+                loader.load('3d/Opel.fbx', function (object) {
+                    object.scale.set(0.5, 0.5, 0.5);
+                    object.position.set(0, 0, 0);
+                    scene.add(object);
+                }, undefined, function (error) {
+                    console.error(error);
+                });
+
+                // 애니메이션 루프
+                function animate() {
+                    requestAnimationFrame(animate);
+                    renderer.render(scene, camera);
+                }
+                animate();
+
+                // 반응형 처리
+                window.addEventListener('resize', () => {
+                    camera.aspect = container.clientWidth / container.clientHeight;
+                    camera.updateProjectionMatrix();
+                    renderer.setSize(container.clientWidth, container.clientHeight);
+                });
+            </script>
+        </div>
         <div class="main_slider swiper-container">
 			<div class="swiper-wrapper">
 				<div class="swiper-slide slide01">
-					<img src="./images/main/slider_01.png"/>
+					<div class="txtBox">
+                        <h2>여행의 시작, <br/>위카렌트카</h2>
+                        <p>전국 어디서든 실시간으로 예약하고 바로 출발하세요!</p>
+                    </div>
 				</div>
 				<div class="swiper-slide slide02">
-					<img src="./images/main/slider_02.png"/>
+					<div class="txtBox">
+                        <h2>실시간 렌트 예약은,<br/>WE CAR</h2>
+                        <p>온라인으로 10초만에 간편하게 예약하세요.</p>
+                    </div>
+				</div>
+                <div class="swiper-slide slide03">
+					<div class="txtBox">
+                        <h2>가입만 해도, <br/>할인 쿠폰 즉시 지급!</h2>
+                        <p>지금 신규회원이 되면 특별 할인 혜택을 드려요.</p>
+                    </div>
 				</div>
 			</div>
 			<div class="pages">
