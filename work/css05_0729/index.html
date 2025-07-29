@@ -5,6 +5,7 @@
   <title>고급 선택자</title>
   <link rel="stylesheet" href="css/register1.css">
   <link rel="stylesheet" href="css/register2.css">
+  <link rel="stylesheet" href="css/register3.css">
   <style>
     * {
       margin:0;
@@ -317,6 +318,27 @@
       border-radius: 5px;
       padding: 20px;
     }
+    #sec14 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      gap: 20px;
+    }
+    #sec14 .container {
+      width: 300px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      text-align: center;
+    }
+    #sec14 .container p:nth-of-type(1){
+      background-color:#fc2;
+    }
+    #sec14 .container div:nth-of-type(2){
+      background-color:#2cf;
+    }
   </style>
 </head>
 <body>
@@ -541,6 +563,59 @@
       <div class="item">7</div>
       <div class="item">8</div>
     </div>
+  </section>
+  <section id="sec14" class="sec">
+    <div class="container">
+      <p>첫번째</p>
+      <div>두번째</div>
+      <p>세번째</p>
+      <div>네번째</div>
+    </div>
+  </section>
+  <section id="sec15" class="sec">
+    <form id="signup">
+      <fieldset>
+        <legend>로그인 정보</legend>
+        <ul>
+          <li>
+            <label for="userid">아이디</label>
+            <input id="userid" name="userid" type="text" required autofocus>
+          </li>
+          <li>
+            <label for="pwd1">비밀번호</label>
+            <input id="pwd1" name="pwd1" type="password"  required>
+          </li>
+          <li>
+            <label for="pwd2">비밀번호 확인</label>
+            <input id="pwd2" name="pwd2" type="password" required>
+          </li>  
+          <li>
+            <label for="level">회원 등급</label>
+            <input id="level" name="level" type="text" readonly value="준회원">
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>개인 정보</legend>
+        <ul>
+          <li>
+            <label for="fullname">이름</label>
+            <input id="fullname" name="fullname" type="text" placeholder="5자미만 공백없이" required>
+          </li>
+          <li>
+            <label for="email">메일 주소</label>
+            <input id="email" name="email" type="email" placeholder="abcd@domain.com" required autocomplete="off">
+          </li>
+          <li>
+            <label for="tel">연락처</label>
+            <input id="tel" name="tel" type="tel" autocomplete="off">
+          </li>  
+        </ul>
+      </fieldset>
+      <fieldset>
+        <button type="submit"> 제출 </button> 
+      </fieldset>
+    </form>
   </section>
 </body>
 </html>
