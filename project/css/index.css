@@ -1,18 +1,40 @@
 @charset "utf-8";
 @import url("./common.css");
 
-#main01 { width:100%; margin-top:0; margin-bottom:100px; position:relative;  }
+#main01 {
+    width:100%;
+    margin-bottom:100px;
+    opacity: 0;
+    transform: translateY(150px);
+    animation: main01-fadeup 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+@keyframes main01-fadeup {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 #main01 span.typing-txt{display: none;}
-#main01 .titBox{width:90%; max-width:1200px; margin:auto; text-align: center; padding-top:350px; height:100vh; min-height:572px; margin-bottom:80px; opacity:0;}
-#main01 .titBox #ani{color:var(--purple); }
-#main01 .titBox #ani h1{font-size:140px; font-weight:900; height:170px; }
+#main01 .titBox{width:90%; max-width:1200px; margin:auto; text-align: center; padding-top:250px; position:relative; z-index:2; }
+#main01 .titBox #ani {height:238px;}
+#main01 .titBox #ani h1{font-size:140px; font-weight:900; height:170px; background: linear-gradient(0deg, #1A00DF, #8B11EB);-webkit-background-clip: text;-webkit-text-fill-color: transparent;background-clip: text;color: transparent;}
 #main01 .titBox #ani .typing-sm{height:60px; font-size:44px; font-weight:600; color:#636363; display:block; }
 #main01 .titBox .typing { font-size:140px; display: inline-block; animation-name: cursor;  animation-duration: 0.3s;  animation-iteration-count: infinite; } 
-#main01 .main_slider{width:100%; height:572px; display:flex; flex-direction: column; position:relative;}
-#main01 .main_slider .slide01{width:100%; height:100%; background:var(--background-gradient)}
-#main01 .main_slider .slide02{width:100%; height:100%; background:var(--background-gradient)}
-#main01 .main_slider .slide03{width:100%; height:100%; background:#940000}
-#main01 .main_slider .swiper-slide .txtBox{display:flex; width:90%; max-width:1200px; height:100%; margin:Auto; justify-content: center; flex-direction: column; text-align: left; }
-#main01 .main_slider .swiper-slide .txtBox h2{font-size:56px; margin-bottom:50px; color:#fff; font-weight:900;}
-#main01 .main_slider .swiper-slide .txtBox p{font-size:20px; color:#fff;  font-weight:300; }
+#main01 .titBox #ani .typing::after { content: ''; display: inline-block; width: 2px; height: 0.9em; background: #1A00DF; transform: translateY(-12px);margin-left: 10px; vertical-align: middle; animation: blink-cursor 0.7s steps(1) infinite; } @keyframes blink-cursor { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; } }
+
+#main02{width:100%; height:572px; background:url(../images/main/main01.jpg) center bottom no-repeat; background-size:cover; display:flex; justify-content: center; align-items: center; }
+#main02 .quick_form{width:90%; max-width:1200px; margin:auto; background:rgba(255,255,255,.8); border-radius:30px; padding: 32px;  }
+#main02 .quick_form .quick_tab{display:inline-flex; border-radius: 100px; background:#fff; border:1px solid var(--gray-200); margin-bottom:15px;}
+#main02 .quick_form .quick_tab .btn{width:120px; background:#fff; padding: 8px; color: var(--black-900); font-size: 16px; font-weight: 600; height: 40px; border-radius: 20px; font-family: 'Noto Sans KR', sans-serif;}
+#main02 .quick_form .quick_tab .btn_active{background:linear-gradient(180deg, #1A00DF, #8B11EB);color:#fff;}
+#main02 .quick_form .quick_tab .btn_active i{background:#fff; color:#1A00DF; padding:5px 0; width:28px; border-radius:50%; display:inline-block; margin-right:3px; }
+#main02 .quick_form .inner {display:flex; align-items: center; justify-content: space-between;}
+#main02 .quick_form .inner .frm{display:grid; width:calc((100% - 222px)/2); height:72px; gap: 10px; }
+#main02 .quick_form .inner .frm label{font-size:14px; font-family: 'Noto Sans KR', sans-serif; position:relative; font-weight:600; }
+#main02 .quick_form .inner .frm label #month{position:absolute; right:0; top:0; }
+#main02 .quick_form .inner .frm input{background:transparent; color:#222; border:0; font-family: 'Noto Sans KR', sans-serif; padding:0; }
+#main02 .quick_form .inner .frm input:focus{outline:none; box-shadow: none;}
+#main02 .quick_form .inner .update_btn{height:72px; font-size: 20px; color:#fff; padding-right: 24px; background: linear-gradient(0deg, #1A00DF, #8B11EB); border-radius:3px; border:0;  }
+
 

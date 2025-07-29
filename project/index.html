@@ -50,44 +50,24 @@
                 <h5 class="typing-sm"></h5>
             </div>
         </div>
-        <div class="main_slider swiper-container">
-			<div class="swiper-wrapper">
-				<div class="swiper-slide slide01">
-					<div class="txtBox">
-                        <h2>여행의 시작, <br/>위카렌트카</h2>
-                        <p>전국 어디서든 실시간으로 예약하고 바로 출발하세요!</p>
-                    </div>
-				</div>
-				<div class="swiper-slide slide02">
-					<div class="txtBox">
-                        <h2>실시간 렌트 예약은,<br/>WE CAR</h2>
-                        <p>온라인으로 10초만에 간편하게 예약하세요.</p>
-                    </div>
-				</div>
-                <div class="swiper-slide slide03">
-					<div class="txtBox">
-                        <h2>가입만 해도, <br/>할인 쿠폰 즉시 지급!</h2>
-                        <p>지금 신규회원이 되면 특별 할인 혜택을 드려요.</p>
-                    </div>
-				</div>
-			</div>
-		</div>
+    </section>
+    <section id="main02">
         <div class="quick_form">
             <div class="quick_tab">
-                <button type="button" class="btn btn_active">단기 렌트</button>
-                <button type="button" class="btn">월 렌트</button>
+                <button type="button" class="btn btn_active"><i class="fas fa-car-side"></i>단기 렌트</button>
+                <button type="button" class="btn"><i class="fas fa-calendar-check"></i>월 렌트</button>
             </div>
             <form>
                 <div class="inner">
                     <div class="frm">
                         <label for="addr">대여장소</label>
-                        <input type="text" id="addr" class="selected_txt">
+                        <input type="text" id="addr" class="selected_txt" readonly value="한국 / 강남구">
                     </div>
                     <div class="frm">
-                        <label for="date">대여·반납일시<span id="month">1개월</span></label>
-                        <input type="date" id="date" class="selected_txt">
+                        <label for="date">대여·반납일시<span id="month">24시간</span></label>
+                        <input type="text" id="date" class="selected_txt" readonly value="07.30(수) 10:00 ~ 07.31(목) 10:00">
                     </div>
-                    <button type="submit" class="btn update_btn">최저가 차량 검색</button>
+                    <button type="submit" class="btn update_btn"><i class="fa-solid fa-magnifying-glass"></i> 최저가 차량 검색</button>
                 </div>
             </form>
         </div>

@@ -24,7 +24,7 @@ $(document).ready(function() {
 					setTimeout(function() {
 						$(".typing-sm").fadeOut(400);
 						setTimeout(startDeleting, 400); // fadeOut 후 삭제 시작
-					}, 1000); // 보여지는 시간
+					}, 2000); // 보여지는 시간
 				});
 			}
 		}, 100);

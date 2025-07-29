@@ -1089,7 +1089,7 @@ input[type=search]::-webkit-search-cancel-button {
     opacity: 1;
 }
 
-#header{position:fixed; width:100%; top:0; left:0; z-index:9999;}
+#header{position:fixed; width:100%; top:0; left:0; z-index:9999; background:#fff; }
 #header .top{width:100%; padding: 6px 0; border-bottom: 1px solid var(--gray-200);font-size: 14px;font-weight: 400; font-family: 'Noto Sans KR', sans-serif;}
 #header .top .topmenu{max-width:1200px; margin:auto; display:flex; justify-content: flex-end; align-items: center; gap: 4px;}
 #header .top .btn-bookmark{height:auto; padding: 4px 8px;border-radius: 30px;margin-right:10px;font-size: 13px;color: #aa00df;display: flex; align-items: center; font-family: 'Noto Sans KR', sans-serif;}
