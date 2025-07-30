@@ -1090,6 +1090,7 @@ input[type=search]::-webkit-search-cancel-button {
 }
 
 #header{position:fixed; width:100%; top:0; left:0; z-index:9999; background:transparent; }
+#header.scroll{background:rgba(255,255,255,.8)}
 #header .top{width:100%; padding: 6px 0; border-bottom: 1px solid var(--gray-200);font-size: 14px;font-weight: 400; font-family: 'Noto Sans KR', sans-serif;}
 #header .top .topmenu{max-width:1200px; margin:auto; display:flex; justify-content: flex-end; align-items: center; gap: 4px;}
 #header .top .btn-bookmark{height:auto; padding: 4px 8px;border-radius: 30px;margin-right:10px;font-size: 13px;color: #aa00df;display: flex; align-items: center; font-family: 'Noto Sans KR', sans-serif;}
@@ -1099,3 +1100,56 @@ input[type=search]::-webkit-search-cancel-button {
 #header .wrap .logo a span{display:inline-block;}
 #header .wrap .logo a span{color:#0029ff;}
 #header .wrap .menu a{display: inline-block;padding: 8px;font-size: 16px;font-weight: 500;line-height: 1.4em; font-family: 'Noto Sans KR', sans-serif;}
+
+#footer{background:#1E2223; padding:80px 0 110px; }
+#footer .footer01{width:90%; max-width:1280px; padding-bottom:40px; border-bottom:1px solid rgba(255,255,255,0.3);  margin:auto; display:flex; justify-content: space-between; flex-wrap: wrap;}
+#footer .footer01 .cl .ftop{display:flex; align-items: center; margin-bottom:30px; }
+#footer .footer01 .cl .ftop .sns a:first-child{display:inline-block; margin-right:10px;}
+#footer .footer01 .cl .mcopy{display:none}
+#footer .footer01 .cl .mcopy a{display:inline-block; color:rgba(255,255,255,.7);}
+#footer .footer01 .cl .mcopy a:first-child{margin-right:10px; }
+#footer .footer01 .cl .fcopy p{font-size:1.1em; line-height:1.8em; font-weight:300; margin:0; color:rgba(255,255,255,0.8); }
+#footer .footer01 .cl .fcopy p em{font-weight:600; display:inline-block; margin-right:10px; }
+#footer .footer01 .cl .fcopy p .b{display:inline-block; margin:0 10px; }
+#footer .footer01 .cl .fcopy p .mshow{display:none; }
+#footer .footer01 .mtit{display:none }
+#footer .footer01 .cr{margin:0; display:flex; flex-direction: column;}
+#footer .footer01 .cr li{display:flex; align-items: center; margin-bottom:15px;}
+#footer .footer01 .cr li em{width:83px; font-size:1.1em; margin-right:13px; padding:3px 10px; justify-content:center; align-items: center; color:rgba(255,255,255); background:#4e4f4f; display:flex; border-radius:20px; white-space: nowrap;}
+#footer .footer01 .cr li p{margin:0; color:rgba(255,255,255,.8); word-break:keep-all; }
+#footer .footer02{width:90%; max-width:1280px; padding-top:20px; margin:auto; display:flex; justify-content: space-between;}
+#footer .footer02 .cl a{display:inline-block; color:rgba(255,255,255,.7);}
+#footer .footer02 .cl a:first-child{margin-right:30px; }
+#footer .footer02 .cr{color:rgba(255,255,255,.5);}
+
+@media (max-width: 1150px) {
+#footer .footer01{flex-direction: column;}
+#footer .footer01 .cr{margin-top:40px; }
+#footer .footer01 .cr li{margin-bottom:15px}
+}
+@media (max-width: 640px) {
+#footer{padding:60px 0 90px;}
+#footer .footer01{border-bottom:0; }
+#footer .footer01 .cl .fcopy p .mshow{display:block; }
+#footer .footer01 .cl .fcopy p .mhide{display:none}
+#footer .footer01 .cl .mcopy{display:block; margin-bottom:20px; }
+#footer .footer01 .cr li{flex-direction: column;align-items: flex-start;}
+#footer .footer01 .cr li em{margin-bottom:10px; background: transparent; padding:0; width:auto; }
+#footer .footer01 .cr li em::before{content:'■'; display:inline-block; margin-right:6px; }
+#footer .footer02{display:none}
+#footer .footer01 .mtit{display:block; color:#fff; font-size:1.4em; margin:40px 0 10px; font-weight:600;   }
+#footer .footer01 .cr{margin-top:20px; }
+}
+@media (max-width: 450px) {
+#footer{padding:50px 0 40px;}
+#footer .footer01{padding-bottom:0px;}
+#footer .footer01 .cl .ftop .logo img{width:96px; }
+#footer .footer01 .cl .ftop{margin-bottom:25px}
+#footer .footer01 .cl .fcopy p{font-size:0.95em;}
+#footer .footer01 .cl .fcopy p .b{margin:0 5px;}
+#footer .footer01 .cl .fcopy p em{margin-right:6px; }
+#footer .footer01 .cr li em{font-size:0.9em}
+#footer .footer01 .cr li p{font-size:0.9em}
+#footer .footer02 .cl{font-size:0.9em;}
+#footer .footer02 .cr{margin-top:20px; font-size:0.9em;}
+}
