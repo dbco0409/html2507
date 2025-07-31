@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>위카랜트카</title>
+
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/index.css" />
+
+    <!-- js -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    
+    <script src="./js/commons.js"></script>
+    <script src="./js/index.js"></script>
+    
+</head>
+
+<body>
+    <header id="header">
+        <div class="top">
+            <nav class="topmenu">
+                <button type="button" class="btn btn-bookmark">즐겨찾기 추가</button>
+                <a href="">로그인/회원가입</a>
+                <a href="">예약확인</a>
+            </nav>
+        </div>
+        <div class="wrap">
+            <div class="logo">
+                <a href="/">WE<span class="lo2">C</span>AR</a>
+            </div>
+            <nav class="menu">
+                <a href="day_rent.html">단기 렌트</a>
+                <a href="month_rent.html">장기 렌트</a>
+                <a href="event_list.html">이벤트</a>
+                <a href="qna.html">고객센터</a>
+            </nav>
+        </div>
+    </header>
+    <div id="fixedbg"></div>
+    <section id="main01">
+        <div id="bgw"></div>
+        <div class="titBox">
+            <div id="ani">
+                <h1>WECAR IS<br/>
+                <span class="typing-txt"></span> 
+                <span class="typing"></span> 
+                </h1>
+                <h5 class="typing-sm"></h5>
+            </div>
+        </div>
+        <a href="#main02" class="cs-down_btn"></a>
+    </section>
+    <section id="main02">
+        <div class="quick_form">
+            <div class="titBox">
+                <div class="quick_tab">
+                    <button type="button" id="day" class="btn active" onclick="rentPop('day')"><i class="fas fa-car-side"></i>단기 렌트</button>
+                    <button type="button" id="month" class="btn" onclick="rentPop('month')"><i class="fas fa-calendar-check"></i>월 렌트</button>
+                </div>
+            </div>
+            <form>
+                <div class="inner">
+                    <div class="frm">
+                        <label for="addr">대여장소</label>
+                        <input type="text" id="addr" class="selected_txt" readonly value="한국 / 강남구" onclick="showPop('#pop_addr')">
+                    </div>
+                    <div class="frm">
+                        <label for="date">대여/반납 날짜</label>
+                        <input type="text" id="date" class="selected_txt" readonly value="07.30(수) 10:00" onclick="showPop('#pop_date')">
+                    </div>
+                </div>
+                <div class="btns">
+                    <button type="submit" class="btn update_btn"><i class="fa-solid fa-magnifying-glass"></i> 최저가 차량 검색</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <section id="main03">
+        <div class="txtbox">
+            <h1>위카렌트카의 특별한 서비스</h1>
+            <p>편리하고 다양한 서비스 무엇이든지 문의해주세요.</p>
+        </div>
+        <div class="box">
+            <div class="col">
+                <img src="./images/main/main03_1.jpg"/>
+                <div class="txt">
+                    <h3>장기 렌트 프로그램</h3>
+                    <p>초기비용 없음, 비용절감 차량 계약 이후 출고시까지<br/>동급 또는 상급 차량 지연대차 지원</p>
+                </div>
+            </div>
+            <div class="col">
+                <img src="./images/main/main03_2.jpg"/>
+                <div class="txt">
+                    <h3>기사포함 서비스</h3>
+                    <p>전문 교육을 받은 친절한 운전 기사가 고객님의 요청에 따라 안전하고 편안하게 동행하여 모셔드립니다.</p>
+                </div>
+            </div>
+            <div class="col">
+                <img src="./images/main/main03_3.jpg"/>
+                <div class="txt">
+                    <h3>공항송영 서비스</h3>
+                    <p>고객님의 출발지에서 공항으로 이동하고, 도착 후 피곤하신 고객님을 위해 도착지까지 편안한 이동을 제공하는 차량 및 운전 기사 서비스입니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="sec06">
+        <div class="inner">
+            <div class="txtbox">
+                <h1>위카렌트카 스토리</h1>
+                <p>약 <span class="blue">5,000명</span>의 고객님들이 위카를 만족해 주셨습니다</p>
+            </div>
+            <div class="imgbox">
+                <img src="./images/main/main6_01.png"/>
+                <img src="./images/main/main6_02.png"/>
+                <img src="./images/main/main6_03.png"/>
+                <img src="./images/main/main6_04.png"/>
+                <img src="./images/main/main6_05.png"/>
+                <img src="./images/main/main6_06.png"/>
+            </div>
+        </div>
+    </section>
+
+    <section id="main04">
+        <div class="bgw"></div>
+        <div class="txtBox">
+            <p>부담없는 가격, 안전하고 친절한</p>
+            <h1>전국 최저가 위카렌트카</h1>
+        </div>
+    </section>
+
+    <aside id="pop_addr" class="popup">
+        <div class="bg" onclick="hidePop('#pop_addr')"></div>
+        <div class="pop">
+            <div class="pop_head">
+                <h2>대여장소</h2>
+                <button class="btn btn_close" onclick="hidePop('#pop_addr')"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="pop_search">
+                <input type="text" class="search">
+                <button class="btn btn_search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <div class="addr">
+                <div class="cate">
+                    <ul>
+                        <li class="active">서울</li>
+                        <li>경기북부</li>
+                        <li>경기남부</li>
+                        <li>인천</li>
+                        <li>충남</li>
+                        <li>대전</li>
+                    </ul>
+                </div>
+                <div class="content">
+                    <ul>
+                        <li>강남점</li>
+                        <li>강서점</li>
+                        <li>용산점</li>
+                        <li>김포공항점</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <aside id="pop_date" class="popup">
+        <div class="bg" onclick="hidePop('#pop_date')"></div>
+        <div class="pop">
+            <div class="pop_head">
+                <h2>대여 및 반납</h2>
+                <button class="btn btn_close" onclick="hidePop('#pop_date')"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="pop_tab">
+                <button class="btn_tab active">날짜 선택</button>
+                <button class="btn_tab">월 선택</button>
+            </div>
+            <div class="tab tab1 active">
+                <div class="tabset">
+                    <div class="pop_input_group input_full">
+                        <div class="inputs">
+                            <label for="start_date">대여 / 반납날짜</label>
+                            <input type="text" name="start_date" id="start_date">
+                        </div>
+                    </div>
+                    <div class="pop_input_group">
+                         <div class="inputs">
+                            <label for="start_time">대여시간</label>
+                            <select name="start_time" class="start_time" id="start_time">
+                                <option>08:00</option>
+                                <option>08:30</option>
+                                <option>09:00</option>
+                                <option>09:30</option>
+                                <option>10:00</option>
+                                <option>10:30</option>
+                                <option>11:00</option>
+                                <option>11:30</option>
+                                <option>12:00</option>
+                                <option>12:30</option>
+                                <option>13:00</option>
+                                <option>13:30</option>
+                                <option>14:00</option>
+                                <option>14:30</option>
+                                <option>15:00</option>
+                                <option>15:30</option>
+                                <option>16:00</option>
+                                <option>16:30</option>
+                                <option>17:00</option>
+                                <option>17:30</option>
+                                <option>18:00</option>
+                                <option>18:30</option>
+                                <option>19:00</option>
+                                <option>19:30</option>
+                                <option>20:00</option>
+                                <option>20:30</option>
+                            </select>
+                        </div>
+                        <div class="inputs">
+                            <label for="end_time">반납시간</label>
+                            <select name="end_time" id="end_time">
+                                <option>08:00</option>
+                                <option>08:30</option>
+                                <option>09:00</option>
+                                <option>09:30</option>
+                                <option>10:00</option>
+                                <option>10:30</option>
+                                <option>11:00</option>
+                                <option>11:30</option>
+                                <option>12:00</option>
+                                <option>12:30</option>
+                                <option>13:00</option>
+                                <option>13:30</option>
+                                <option>14:00</option>
+                                <option>14:30</option>
+                                <option>15:00</option>
+                                <option>15:30</option>
+                                <option>16:00</option>
+                                <option>16:30</option>
+                                <option>17:00</option>
+                                <option>17:30</option>
+                                <option>18:00</option>
+                                <option>18:30</option>
+                                <option>19:00</option>
+                                <option>19:30</option>
+                                <option>20:00</option>
+                                <option>20:30</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="info">
+                    24시간 미만 대여는 전화 또는 채팅상담 전용으로 예약가능<br/>
+                    <button type="button" class="btn_tel"><i class="fa-solid fa-phone"></i> 전화상담</button>
+                </div>
+            </div>
+            <div class="tab tab2">
+                <div class="tabset">
+                    <div class="pop_input_group">
+                        <div class="inputs">
+                            <label for="start_date2">대여날짜</label>
+                            <input type="text" name="start_date2" id="start_date2">
+                        </div>
+                        <div class="inputs">
+                            <label for="end_start2">반납날짜</label>
+                            <select name="end_start2" id="end_start2">
+                                <option>1개월(30일)</option>
+                                <option>2개월(60일)</option>
+                                <option>3개월(90일)</option>
+                                <option>4개월(120일)</option>
+                                <option>5개월(150일)</option>
+                                <option>6개월(180일)</option>
+                                <option>7개월(210일)</option>
+                                <option>8개월(240일)</option>
+                                <option>9개월(270일)</option>
+                                <option>10개월(300일)</option>
+                                <option>11개월(330일)</option>
+                                <option>12개월(360일)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="pop_input_group">
+                        <div class="inputs">
+                            <label for="start_time2">대여시간</label>
+                            <select name="start_time2" id="start_time2">
+                                <option>08:00</option>
+                                <option>08:30</option>
+                                <option>09:00</option>
+                                <option>09:30</option>
+                                <option>10:00</option>
+                                <option>10:30</option>
+                                <option>11:00</option>
+                                <option>11:30</option>
+                                <option>12:00</option>
+                                <option>12:30</option>
+                                <option>13:00</option>
+                                <option>13:30</option>
+                                <option>14:00</option>
+                                <option>14:30</option>
+                                <option>15:00</option>
+                                <option>15:30</option>
+                                <option>16:00</option>
+                                <option>16:30</option>
+                                <option>17:00</option>
+                                <option>17:30</option>
+                                <option>18:00</option>
+                                <option>18:30</option>
+                                <option>19:00</option>
+                                <option>19:30</option>
+                                <option>20:00</option>
+                                <option>20:30</option>
+                            </select>
+                        </div>
+                        <div class="inputs">
+                            <label for="end_time2">반납시간</label>
+                            <select name="end_time2" class="time1" id="end_time2">
+                                <option>08:00</option>
+                                <option>08:30</option>
+                                <option>09:00</option>
+                                <option>09:30</option>
+                                <option>10:00</option>
+                                <option>10:30</option>
+                                <option>11:00</option>
+                                <option>11:30</option>
+                                <option>12:00</option>
+                                <option>12:30</option>
+                                <option>13:00</option>
+                                <option>13:30</option>
+                                <option>14:00</option>
+                                <option>14:30</option>
+                                <option>15:00</option>
+                                <option>15:30</option>
+                                <option>16:00</option>
+                                <option>16:30</option>
+                                <option>17:00</option>
+                                <option>17:30</option>
+                                <option>18:00</option>
+                                <option>18:30</option>
+                                <option>19:00</option>
+                                <option>19:30</option>
+                                <option>20:00</option>
+                                <option>20:30</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="info">
+                    30일 미만 대여는 단기대여에서 선택 가능합니다.<br/>
+                    실시간 전화 상담 (영업시간 09:00 ~18:00)
+                    <button type="button" class="btn_tel"><i class="fa-solid fa-phone"></i> 전화상담</button>
+                </div>
+            </div>
+
+            <div class="btns">
+                <button type="reset" class="btn reset_btn"><i class="fa-solid fa-rotate-right"></i></button>
+                <button type="submit" class="btn submit_btn"><i class="fa-solid fa-magnifying-glass"></i> 최저가 차량 검색</button>
+            </div>
+        </div>
+    </aside>
+    
+
+    <footer id="footer">
+        <article class="footer01">
+            <div class="cl">
+                <div class="ftop">
+                    <div class="sns">
+                        <a href="" target="_blank"><img src="./images/common/naver.svg"/></a>
+                        <a href="" target="_blank"><img src="./images/common/youtube.svg"/></a>
+                    </div>
+                </div>
+                <div class="mcopy">
+                    <a>개인정보처리방침</a>
+                    <a>서비스이용약관</a>
+                </div>
+                <div class="fcopy">
+                    <p>
+                    경기도 수원시 영통구 광교로 107, 3층 302호<br/>
+                    <em>대표</em><span class="n">김택수</span><span class="b">|</span>
+                    <em>사업자</em><span class="n">828-99-01639</span><br class="mshow"/><span class="b mhide">|</span>
+                    <em>통신판매업신고</em><span class="n">제 2019-수원영통-0447 호</span><br/>
+                    <em>전화</em><span class="n">031-256-2662</span><span class="b">|</span>
+                    <em>메일</em><span class="n">lovezm3@naver.com</span><br class="mshow"/><span class="b mhide">|</span>
+                    <em>팩스</em><span class="n"> 0504-085-6559</span>
+                    </p>
+                </div>
+            </div>
+            <h4 class="mtit">Contact us</h4>
+            <ul class="cr">
+                <li>
+                    <em>수원역점</em>
+                    <p> 경기도 수원시 팔달구 덕영대로 905, 2층(아이메카빌딩)</p>
+                </li>
+                <li>
+                    <em>장안문점</em>
+                    <p>경기도 수원시 장안구 정조로 940-1(영화동, 연세IT미래교육원 빌딩)</p>
+                </li>
+            </ul>
+        </article>
+        <article class="footer02">
+            <div class="cl">
+                <a>개인정보처리방침</a>
+                <a>서비스이용약관</a>
+            </div>
+            <div class="cr">
+                COPYRIGHT(C) 2025 위카 ALL RIGHTS RESERVED.
+            </div>
+        </article>
+    </footer>
+
+
+</body>
+
+</html>

@@ -8,28 +8,28 @@ $(document).ready(function() {
 	let tyInt;
 
 	function startTyping() {
-	typingBool = true;
-	typingIdx = 0;
-	$(".typing").text(""); // 메인 텍스트 초기화
+		typingBool = true;
+		typingIdx = 0;
+		$(".typing").text(""); // 메인 텍스트 초기화
 
-	const typingTxt = typingtxts[currentIdx].split("");
-	const typingSm = typingtxtsKor[currentIdx];
+		const typingTxt = typingtxts[currentIdx].split("");
+		const typingSm = typingtxtsKor[currentIdx];
 
-	// ✅ 서브 텍스트 요소는 보여주되 내용은 아직 없음
-	$(".typing-sm").hide().text("").fadeIn(); 
+		// ✅ 서브 텍스트 요소는 보여주되 내용은 아직 없음
+		$(".typing-sm").hide().text("").fadeIn(); 
 
-	tyInt = setInterval(function () {
-		if (typingIdx < typingTxt.length) {
-			$(".typing").append(typingTxt[typingIdx]);
-			typingIdx++;
-		} else {
-			clearInterval(tyInt);
-			setTimeout(startDeleting, 3000);
-		}
-	}, 100);
+		tyInt = setInterval(function () {
+			if (typingIdx < typingTxt.length) {
+				$(".typing").append(typingTxt[typingIdx]);
+				typingIdx++;
+			} else {
+				clearInterval(tyInt);
+				setTimeout(startDeleting, 3000);
+			}
+		}, 100);
 
-	$(".typing-sm").html(typingSm);
-}
+		$(".typing-sm").html(typingSm);
+	}
 
 
 	function startDeleting() {
@@ -50,27 +50,3 @@ $(document).ready(function() {
 	startTyping();
 
 });
-$(window).on("scroll", function () {
-	if ($(window).scrollTop() > 100) {
-		$("#header").addClass("scroll");
-	} else {
-		$("#header").removeClass("scroll");
-	}
-});
-
-function rentPop(a){
-	$(".quick_tab .btn").removeClass("active");
-	$("#"+a).addClass("active");
-	if(a=='month')
-		$("#period").text('1달');
-	else
-		$("#period").text('1일');
-}
-
-function showPop(a){
-	$(a).fadeIn();
-}
-
-function hidePop(a){
-	$(a).fadeOut();
-}

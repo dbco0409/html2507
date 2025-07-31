@@ -77,15 +77,6 @@ button.btn:focus{box-shadow:none; outline:none; }
     --disabled-bg: #EAEAEA;
     --disabled-bd: #EAEAEA;
 
-    /* ppearance */
-    --appearance-ping: url(../img/icon/icon-stroke-ping.svg);
-    --appearance-ping: url(../img/icon/icon-stroke-calendar.svg);
-    --appearance-select: url(../img/icon/icon-stroke-select-down.svg);
-    --appearance-select2: url(../img/icon/icon-stroke-select-down2.svg);
-    --appearance-search: url(../img/icon/icon-stroke-search.svg);
-    --appearance-clear: url(../img/icon/icon-stroke-close.svg);
-    --appearance-padding: 36px;
-
 
     /*border*/
     --border-color: #EAEAEA;
