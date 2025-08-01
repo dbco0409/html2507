@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9일차 과제</title>
+    <style>
+        .pic img {
+            width: 100%;
+            height: auto;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 10px;
+        }
+
+        .pic {
+            flex-basis: 32%;
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .pic {
+                flex-basis: 49%;
+            }
+        }
+
+        @media (max-width: 768p) {
+            .pic {
+                flex-basis: 100%;
+            }
+        }
+        .title {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="title">9일차 과제</h1>
+    <div class="container">
+        <div class="pic">
+            <img src="images/images/kitten-1.jpg" alt="아기 고양이 사진">
+        </div>
+        <div class="pic">
+            <img src="images/images/kitten-2.jpg" alt="아기 고양이 사진">
+        </div>
+        <div class="pic">
+            <img src="images/images/kitten-3.jpg" alt="아기 고양이 사진">
+        </div>
+    </div>
+    <p>화면의 크기에 따라 사진의 배치가 바뀜.</p>
+</body>
+
+</html>
