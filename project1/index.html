@@ -53,43 +53,29 @@
 				</div>
 			</div>
 		</div>
-        <!-- <div class="quick_form">
-            <form>
-                <h3>핏고가 제안하는<br/><span>국내여행 솔루션!</span></h3>
-                <div class="inner">
-                    <div class="frm">
-                        <label for="addr">어디로 떠나시나요?</label>
-                        <input type="text" id="addr" class="selected_txt" readonly value="대한민국 / 서울" onclick="showPop('#pop_addr')">
-                    </div>
-                    <div class="frm">
-                        <label for="date">여행기간</label>
-                        <input type="text" id="date" class="selected_txt" readonly value="2025-08-12 ~ 2025-08-16">
-                    </div>
+        <div class="quick_form quick">
+            <input type="hidden" name="cc" id="cc" value="11B10101"><!--국가코드-->
+            <h3>핏고가 제안하는<br/><span>여행 솔루션!</span></h3>
+            <div class="inner">
+                <div class="frm">
+                    <label for="addr">어디로 떠나시나요?</label>
+                    <input type="text" id="addr" class="selected_txt" readonly value="대한민국 / 서울" onclick="showPop('#pop_addr')">
                 </div>
-                <div class="btns">
-                    <button type="submit" class="btn update_btn" onclick="getWeatherAndRedirect()"><i class="fa-solid fa-magnifying-glass"></i> 날씨 조회</button>
+                <div class="frm">
+                    <label for="date">여행기간</label>
+                    <input type="text" id="date" class="selected_txt" readonly value="2025.08.04 - 2025.08.06">
                 </div>
-            </form>
-        </div> -->
-        <div class="quick_result">
+            </div>
+            <div class="btns">
+                <button type="button" class="btn update_btn" onclick="getWeatherAndRedirect()"><i class="fa-solid fa-magnifying-glass"></i> 날씨 조회</button>
+            </div>
+        </div>
+        <div class="quick_result quick">
              <div class="infoTxt">
-                <h3>여행기간의 날씨 예보</h3>
+                <h3>내 여행기간동안 날씨는?</h3>
                 <h1>대한민국 / 서울<span>(2025-08-12 ~ 2025-08-16)</span></h1>
-                <div class="weather">
-                    <div class="col-w">
-                        <h4>08-12</h4>
-                        <ul class="day">
-                            <li><span>오전</span><i class="wt_icon ico_wt1"><span class="blind">맑음</span></i></li>
-                            <li><span>오후</span><i class="wt_icon ico_wt5"><span class="blind">구름많음</span></i></li>
-                        </ul>
-                        <ul class="num">
-                            <li><span>최저</span>26도</li>
-                            <li><span>최고</span>35도</li>
-                        </ul>
-                    </div>
-                    <h3>여행기간동안 어울리는 픽고 추천 스타일은?</h3>
-                    <button type="button" class="btn">보러가기</button>
-                </div>
+                <div id="weather_summary" class="weather-result-box"></div>
+                <button type="button" class="btn btn_go">여행기간 동안 어울리는 픽고픽 스타일 보러가기</button>
             </div>
         </div>
     </section>
@@ -144,3 +130,21 @@
 </body>
 
 </html>
+
+<form method="get">
+    <input type="hidden" name="cc" id="cc" value="11B10101"><!--국가 지점번호--> 
+    <h3>핏고가 제안하는<br/><span>여행 솔루션!</span></h3>
+    <div class="inner">
+        <div class="frm">
+            <label for="addr">어디로 떠나시나요?</label>
+            <input type="text" id="addr" class="selected_txt" readonly value="대한민국 / 서울" onclick="showPop('#pop_addr')">
+        </div>
+        <div class="frm">
+            <label for="date">여행기간</label>
+            <input type="text" id="date" class="selected_txt" readonly value="2025-08-12 ~ 2025-08-16">
+        </div>
+    </div>
+    <div class="btns">
+        <button type="submit" class="btn update_btn" onclick="getWeatherAndRedirect()"><i class="fa-solid fa-magnifying-glass"></i> 날씨 조회</button>
+    </div>
+</form>

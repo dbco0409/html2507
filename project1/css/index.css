@@ -26,3 +26,20 @@ html,body{overflow:hidden;}
 #main01 .quick_form .inner .frm input{background:transparent; color:#222; border:0; font-family: 'Noto Sans KR', sans-serif; padding:0; text-align: left; cursor:pointer; }
 #main01 .quick_form .inner .frm input:focus{outline:none; box-shadow: none;}
 #main01 .quick_form .update_btn{width:100%; height:50px; font-size: 20px; color:#fff; background: linear-gradient(0deg, #01811b, #05db25); border-radius:20px; border:0; text-shadow:3px 3px 10px rgb(6, 151, 50); }
+
+#main01 .quick_form{width:768px; margin:auto; position:absolute; top:50%; left:50%; transform: translate(-50%, -50%); z-index:5; background-color: rgba(255,255,255,.7);  padding:30px; border-radius:20px; transition: transform 0.5s ease-in-out;}
+#main01 .quick_form.animate {animation: moveUpDown 0.5s ease-in-out;}
+
+@keyframes moveUpDown {
+  0%, 100% {transform: translate(-50%, -50%);}
+  50% { transform: translate(-50%, -53%);}
+}
+
+
+#main01 .quick_result{display:none; width:768px; margin:auto; position:absolute; top:50%; left:50%; transform: translate(-50%, -50%); z-index:5; background-color: rgba(255,255,255,.7);  padding:30px; border-radius:20px; transition: transform 0.5s ease-in-out; text-align: center;}
+#main01 .quick_result.animate {animation: moveUpDown 0.5s ease-in-out;}
+#main01 .quick_result h3{font-size:18px; background:#01811b; color:#fff; display:inline-block; text-align:center; padding:6px 10px 4px; margin-bottom:10px; }
+#main01 .quick_result h1{font-size:28px; font-weight:800; text-align:center; color:#222}
+#main01 .quick_result h1 span{color:#616161; font-size:18px; margin-top:5px; font-weight:400; display:block; }
+#main01 .quick_result .weather{height:150px;}
+#main01 .quick_result .btn_go{width:100%; height:50px; font-size: 20px; color:#fff; background: linear-gradient(0deg, #01811b, #05db25); border-radius:20px; border:0; text-shadow:3px 3px 10px rgb(6, 151, 50); }
