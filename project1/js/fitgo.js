@@ -13,122 +13,162 @@ $(document).ready(function() {
     });
 });
 
-async function getWeatherApiParamsFromAI(addr, startDateStr, endDateStr) {
-    const prompt = `
-사용자가 여행지로 '${addr}'를 선택했고, 여행 기간은 ${startDateStr}부터 ${endDateStr}까지입니다.
+async function getWeatherApiParamsFromAI() {
+    const API_KEY = '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'; // 여기에 OpenAI API 키를 넣어주세요 (테스트 용도만)
 
-이 정보를 바탕으로 국내/해외 여부를 판단하고, 아래 기준에 따라 API 요청을 위한 파라미터를 JSON 형식으로 작성해 주세요:
+    const url = 'https://api.openai.com/v1/chat/completions';
 
-[1] 국내일 경우 (기상청 API):
-- isDomestic: true
-- apiType: "KMA"
-- stnIds: 기상청 지점 번호 (예: 서울 108, 부산 159 등)
-- startDt: 여행 시작일 (예: 20250804)
-- endDt: 여행 종료일 (예: 20250806)
+    const headers = {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${API_KEY}`
+    };
 
-[2] 해외일 경우 (OpenWeatherMap API):
-- isDomestic: false
-- apiType: "OWM"
-- city: 도시명 (예: Paris)
-- countryCode: 국가 코드 (예: FR)
-- lat: 위도
-- lon: 경도
+    const body = {
+        model: 'gpt-4.1-mini',
+        messages: [
+            { role: 'developer', content: 'You are a helpful assistant.' },
+            { role: 'user', content: '서울의 8월 날씨에 대해 알려줘.' }
+        ],
+        temperature: 0.7
+    };
 
-JSON만 출력해주세요.
-`;
-
-    const res = await fetch("https://api.openai.com/v1/chat/completions", {
-        method: "POST",
-        headers: {
-            "Authorization": "Bearer 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",
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            model: "gpt-4",
-            messages: [
-                {
-                    role: "system",
-                    content: "당신은 사용자 입력을 바탕으로 날씨 API 요청 파라미터를 구성하는 도우미입니다."
-                },
-                {
-                    role: "user",
-                    content: prompt
-                }
-            ]
-        })
-    });
-
-    const json = await res.json();
-    const content = json.choices?.[0]?.message?.content;
     try {
-        return JSON.parse(content);
-    } catch {
-        console.error("AI 응답 JSON 파싱 실패:", content);
-        return null;
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: headers,
+            body: JSON.stringify(body)
+        });
+
+        const data = await response.json();
+
+        if (data.choices && data.choices.length > 0) {
+            console.log('AI 응답:', data.choices[0].message.content);
+            alert('AI 응답:\n' + data.choices[0].message.content);
+        } else {
+            console.error('AI 응답 없음');
+        }
+    } catch (error) {
+        console.error('API 호출 오류:', error);
     }
 }
 
-async function fetchWeatherByParams(params) {
-    if (params.apiType === "KMA") {
-        // 기상청 API 호출
-        const url = `https://apis.data.go.kr/1360000/AsosDalyInfoService/getWthrDataList?` +
-            `serviceKey=b6QUXFo4NJdzDjrwkgiDQAoVJIhjHLU9NplomktTDExQr8f5t153FdoHN%2FhWgBpgNcbIWhNsL%2FfJSnFqNZGdvg%3D%3D` +
-            `&numOfRows=10&pageNo=1&stnIds=${params.stnIds}&startDt=${params.startDt}&endDt=${params.endDt}&dateCd=DAY&dataCd=ASOS&dataType=JSON`;
+// async function getWeatherApiParamsFromAI(addr, startDateStr, endDateStr) {
+//     const prompt = `
+// 사용자가 여행지로 '${addr}'를 선택했고, 여행 기간은 ${startDateStr}부터 ${endDateStr}까지입니다.
 
-        return fetch(url).then(res => res.json());
+// 이 정보를 바탕으로 국내/해외 여부를 판단하고, 아래 기준에 따라 API 요청을 위한 파라미터를 JSON 형식으로 작성해 주세요:
 
-    } else if (params.apiType === "OWM") {
-        const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${params.lat}&lon=${params.lon}&appid=f55eebcd96763c43993ce3c1665d7680&units=metric&lang=kr`;
-        return fetch(url).then(res => res.json());
-    }
+// [1] 국내일 경우 (기상청 API): 
+// URL - http://apis.data.go.kr/1360000/AsosDalyInfoService/getWthrDataList
+// - isDomestic: true
+// - apiType: "KMA"
+// - stnIds: 기상청 지점 번호 (예: 서울 108, 부산 159 등)
+// - startDt: 여행 시작일 (예: 20250804)
+// - endDt: 여행 종료일 (예: 20250806)
 
-    throw new Error("지원하지 않는 API 유형입니다.");
-}
+// [2] 해외일 경우 (OpenWeatherMap API):
+// - isDomestic: false
+// - apiType: "OWM"
+// - city: 도시명 (예: Paris)
+// - countryCode: 국가 코드 (예: FR)
+// - lat: 위도
+// - lon: 경도
 
-async function getWeatherSummaryFromAI(addr, startDateStr, endDateStr, weatherJson) {
-    const prompt = `
-여행지는 '${addr}'이며, 여행 기간은 ${startDateStr}부터 ${endDateStr}까지입니다.
-아래는 날씨 API에서 받은 JSON입니다:
+// JSON만 출력해주세요.
+// `;
 
-${JSON.stringify(weatherJson)}
+//     const res = await fetch("https://api.openai.com/v1/chat/completions", {
+//         method: "POST",
+//         headers: {
+//             "Authorization": "Bearer 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",
+//             "Content-Type": "application/json"
+//         },
+//         body: JSON.stringify({
+//             model: "gpt-4.1",
+//             messages: [
+//                 {
+//                     role: "developer",
+//                     content: "당신은 사용자 입력을 바탕으로 날씨 API 요청 파라미터를 구성하는 도우미입니다."
+//                 },
+//                 {
+//                     role: "user",
+//                     content: prompt
+//                 }
+//             ]
+//         })
+//     });
 
-이 정보를 보기 좋게 요약해 주세요. 날짜별로 구분해서 요약하고, 우산 필요 여부나 기온에 대한 간단한 팁도 있으면 포함해 주세요.
-`;
+//     const json = await res.json();
+//     const content = json.choices?.[0]?.message?.content;
+//     try {
+//         return JSON.parse(content);
+//     } catch {
+//         console.error("AI 응답 JSON 파싱 실패:", content);
+//         return null;
+//     }
+// }
 
-    const res = await fetch("https://api.openai.com/v1/chat/completions", {
-        method: "POST",
-        headers: {
-            "Authorization": "Bearer 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",
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            model: "gpt-4",
-            messages: [
-                { role: "system", content: "당신은 여행자에게 날씨 정보를 보기 쉽게 요약해주는 도우미입니다." },
-                { role: "user", content: prompt }
-            ]
-        })
-    });
+// async function fetchWeatherByParams(params) {
+//     if (params.apiType === "KMA") {
+//         // 기상청 API 호출
+//         const url = `https://apis.data.go.kr/1360000/AsosDalyInfoService/getWthrDataList?` +
+//             `serviceKey=b6QUXFo4NJdzDjrwkgiDQAoVJIhjHLU9NplomktTDExQr8f5t153FdoHN%2FhWgBpgNcbIWhNsL%2FfJSnFqNZGdvg%3D%3D` +
+//             `&numOfRows=10&pageNo=1&stnIds=${params.stnIds}&startDt=${params.startDt}&endDt=${params.endDt}&dateCd=DAY&dataCd=ASOS&dataType=JSON`;
 
-    const json = await res.json();
-    return json.choices?.[0]?.message?.content || "날씨 요약을 불러오지 못했습니다.";
-}
+//         return fetch(url).then(res => res.json());
 
-async function getWeatherAndRedirect() {
-    const addr = document.getElementById('addr').value;
-    const dateRange = document.getElementById('date').value.replace(/\s/g, '');
-    const [startDateStr, endDateStr] = dateRange.split('-');
+//     } else if (params.apiType === "OWM") {
+//         const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${params.lat}&lon=${params.lon}&appid=f55eebcd96763c43993ce3c1665d7680&units=metric&lang=kr`;
+//         return fetch(url).then(res => res.json());
+//     }
 
-    const params = await getWeatherApiParamsFromAI(addr, startDateStr, endDateStr);
-    if (!params) {
-        alert("날씨 요청 정보를 구성할 수 없습니다.");
-        return;
-    }
+//     throw new Error("지원하지 않는 API 유형입니다.");
+// }
 
-    const weatherJson = await fetchWeatherByParams(params);
-    const summary = await getWeatherSummaryFromAI(addr, startDateStr, endDateStr, weatherJson);
+// async function getWeatherSummaryFromAI(addr, startDateStr, endDateStr, weatherJson) {
+//     const prompt = `
+// 여행지는 '${addr}'이며, 여행 기간은 ${startDateStr}부터 ${endDateStr}까지입니다.
+// 아래는 날씨 API에서 받은 JSON입니다:
 
-    document.getElementById("weather_summary").innerText = summary;
-}
+// ${JSON.stringify(weatherJson)}
+
+// 이 정보를 보기 좋게 요약해 주세요. 날짜별로 구분해서 요약하고, 우산 필요 여부나 기온에 대한 간단한 팁도 있으면 포함해 주세요.
+// `;
+
+//     const res = await fetch("https://api.openai.com/v1/chat/completions", {
+//         method: "POST",
+//         headers: {
+//             "Authorization": "Bearer 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",
+//             "Content-Type": "application/json"
+//         },
+//         body: JSON.stringify({
+//             model: "gpt-4.1",
+//             messages: [
+//                 { role: "developer", content: "당신은 여행자에게 날씨 정보를 보기 쉽게 요약해주는 도우미입니다." },
+//                 { role: "user", content: prompt }
+//             ]
+//         })
+//     });
+
+//     const json = await res.json();
+//     return json.choices?.[0]?.message?.content || "날씨 요약을 불러오지 못했습니다.";
+// }
+
+// async function getWeatherAndRedirect() {
+//     const addr = document.getElementById('addr').value;
+//     const dateRange = document.getElementById('date').value.replace(/\s/g, '');
+//     const [startDateStr, endDateStr] = dateRange.split('-');
+
+//     const params = await getWeatherApiParamsFromAI(addr, startDateStr, endDateStr);
+//     if (!params) {
+//         alert("날씨 요청 정보를 구성할 수 없습니다.");
+//         return;
+//     }
+
+//     const weatherJson = await fetchWeatherByParams(params);
+//     const summary = await getWeatherSummaryFromAI(addr, startDateStr, endDateStr, weatherJson);
+
+//     document.getElementById("weather_summary").innerText = summary;
+// }
 
 
