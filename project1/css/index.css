@@ -1,0 +1,28 @@
+@charset "utf-8";
+@import url("./common.css");
+
+html,body{overflow:hidden;}
+#main01 {
+    width:100%;
+    height:100vh;
+    position:relative;
+    overflow:hidden;
+}
+#main01 .bg{position:absolute; z-index:3; top:0; left:0; width:100%; height:100%; background:linear-gradient(180deg, rgba(0,0,0,0.4), transparent)}
+#main01 .swiper-slide img{max-width:100%; }
+#main01 .quick_form{width:768px; margin:auto; position:absolute; top:50%; left:50%; transform: translate(-50%, -50%); z-index:5; background-color: rgba(255,255,255,.7);  padding:30px; border-radius:20px; transition: transform 0.5s ease-in-out;}
+#main01 .quick_form.animate {animation: moveUpDown 0.5s ease-in-out;}
+
+@keyframes moveUpDown {
+  0%, 100% {transform: translate(-50%, -50%);}
+  50% { transform: translate(-50%, -53%);}
+}
+#main01 .quick_form h3{font-size:36px; text-align:center; margin-bottom:20px; color:#3f3f3f; }
+#main01 .quick_form h3 span{color:#00af23}
+#main01 .quick_form .inner .frm{width:100%; display:flex; height:110px; margin-bottom:10px; flex-direction: column; padding: 20px; border-radius: 20px; position: relative; border:1px solid var(--gray-100)}
+#main01 .quick_form .inner .frm #period{position: absolute;top: 50%; left:-25px; transform: translateY(-50%); color: #8B11EB; background-color: #fff; border: 1px solid #8B11EB; border-radius: 16px; justify-content: center; padding: 4px 13px;font-size: 12px;line-height: 12px;display: flex; }
+#main01 .quick_form .inner .frm label{font-size:14px; font-family: 'Noto Sans KR', sans-serif; position:relative; font-weight:600; }
+#main01 .quick_form .inner .frm label #month{position:absolute; right:0; top:0; }
+#main01 .quick_form .inner .frm input{background:transparent; color:#222; border:0; font-family: 'Noto Sans KR', sans-serif; padding:0; text-align: left; cursor:pointer; }
+#main01 .quick_form .inner .frm input:focus{outline:none; box-shadow: none;}
+#main01 .quick_form .update_btn{width:100%; height:50px; font-size: 20px; color:#fff; background: linear-gradient(0deg, #01811b, #05db25); border-radius:20px; border:0; text-shadow:3px 3px 10px rgb(6, 151, 50); }
