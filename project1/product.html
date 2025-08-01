@@ -9,7 +9,6 @@
     <script src="./js/jquery-1.12.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="./js/commons.js"></script>
-    <script src="./js/rent.js"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -20,13 +19,13 @@
      <header id="header">
         <div class="wrap">
             <div class="logo">
-                <a href="/">FIT<span>go</span></a>
+                <a href="index.html">FIT<span>go</span></a>
             </div>
             <nav class="menu">
-                <a href="day_rent.html">HOME</a>
-                <a href="month_rent.html">ABOUT</a>
-                <a href="event_list.html">PRODUCTS</a>
-                <a href="qna.html">TOUR</a>
+                <a href="index.html">HOME</a>
+                <a href="about.html">ABOUT</a>
+                <a href="product.html">PRODUCTS</a>
+                <a href="tour.html">TOUR</a>
                 <a href="event.html">EVENT</a>
             </nav>
         </div>
@@ -36,7 +35,7 @@
         <div class="sub_main">
             <div class="txtBox">
                 <h4>PRODUCTS</h4>
-                <p>픽고 제품들을 만나보세요.</p>
+                <p>픽고픽 제품들을 만나보세요.</p>
             </div>
         </div>
         <div class="datefrm">
@@ -47,11 +46,11 @@
                 </div>
                 <div class="inner">
                     <div class="frm">
-                        <label for="addr">여행장소</label>
+                        <label for="addr">어디로 떠나시나요?</label>
                         <input type="text" id="addr" class="selected_txt" readonly value="한국 / 강남구">
                     </div>
                     <div class="frm">
-                        <label for="date">여행날짜</label>
+                        <label for="date">여행 날짜</label>
                         <input type="text" id="date" class="selected_txt" readonly value="07.30(수) 10:00">
                     </div>
                     <div class="btns">
@@ -65,19 +64,59 @@
     <section id="sub_body">
         <div class="content">
             <div class="box">
-                <img src="./images/sub/p1.jpg"/>
+                <div class="bedge best-bedge">HOT</div>
+                <div class="img"><img src="./images/sub/p1.png"/></div>
                 <div class="info">
                     <h5>맑은날 / 도시</h5>
-                    <h1>청매실 글로우 마스크 70ml (브러쉬 증정)</h1>
+                    <h1>마린트 반팔티</h1>
+                    <h3>신데렐라</h3>
                     <h1 class="price">KRW 19,800원</h1>
                 </div>
             </div>
             <div class="box">
-                <img src="./images/sub/p2.jpg"/>
+                <div class="bedge best-bedge">HOT</div>
+                <div class="img"><img src="./images/sub/p2.webp"/></div>
+                <div class="info">
+                    <h5>맑은날 / 어디든지</h5>
+                    <h1>[2PACK] 그래픽 티셔츠</h1>
+                    <h3>FCMM</h3>
+                    <h1 class="price">KRW 17,800원</h1>
+                </div>
+            </div>
+            <div class="box">
+                <div class="img"><img src="./images/sub/p3.webp"/></div>
+                <div class="info">
+                    <h5>더운날 / 어디든지</h5>
+                    <h1>[🏖️ 썸머페스타 7일 특가] 오버더 바이크 전현무 실내자전거 유산소 코어 한뼘 바이크</h1>
+                    <h3>신데렐라</h3>
+                    <h1 class="price">KRW 19,800원</h1>
+                </div>
+            </div>
+            <div class="box">
+                <div class="img"><img src="./images/sub/3.webp"/></div>
                 <div class="info">
                     <h5>맑은날 / 도시</h5>
-                    <h1>청매실 글로우 마스크 70ml (브러쉬 증정)</h1>
+                    <h1>해인 캉캉 민소매</h1>
+                    <h3>신데렐라</h3>
+                    <h1 class="price">KRW 19,800원</h1>
+                </div>
+            </div>
+            <div class="box">
+                <div class="img"><img src="./images/sub/p4.png"/></div>
+                <div class="info">
+                    <h5>맑은날 / 도시</h5>
+                    <h1>[🏖️ 썸머페스타 7일 특가] 오버더 바이크 전현무 실내자전거 유산소 코어 한뼘 바이</h1>
+                    <h3>신데렐라</h3>
                     <h1 class="price">KRW 17,800원</h1>
+                </div>
+            </div>
+            <div class="box">
+                <div class="img"><img src="./images/sub/p2.jpg"/></div>
+                <div class="info">
+                    <h5>맑은날 / 도시</h5>
+                    <h1>[3pack] 릴렉스 핏 쿨링 코튼 티셔츠</h1>
+                    <h3>신데렐라</h3>
+                    <h1 class="price">KRW 19,800원</h1>
                 </div>
             </div>
         </div>
@@ -101,7 +140,7 @@
             <div class="box">
                 <h3>여행날씨</h3>
                 <ul>
-                    <li class="active">전체</li>
+                    <li class="active">모두보기</li>
                     <li>맑은날</li>
                     <li>비오는날</li>
                     <li>쌀쌀한날</li>
@@ -112,12 +151,14 @@
             <div class="box">
                 <h3>여행장소</h3>
                 <ul>
-                    <li>전체</li>
+                    <li>모두보기</li>
                     <li class="active">도시</li>
                     <li>시골</li>
                     <li>관광지</li>
                     <li>산</li>
-                    <li>사막</li>
+                    <li>바다</li>
+                    <li>강변</li>
+                    <li>섬</li>
                 </ul>
             </div>
             <div class="box">
@@ -163,37 +204,11 @@
             <div class="cl">
                 <div class="ftop">
                     <div class="sns">
-                        <a href="" target="_blank"><img src="./images/common/naver.svg"/></a>
-                        <a href="" target="_blank"><img src="./images/common/youtube.svg"/></a>
+                        <a href="" target="_blank"><img src="./images/common/blog.png"/></a>
+                        <a href="" target="_blank"><img src="./images/common/youtube.png"/></a>
                     </div>
                 </div>
-                <div class="mcopy">
-                    <a>개인정보처리방침</a>
-                    <a>서비스이용약관</a>
-                </div>
-                <div class="fcopy">
-                    <p>
-                    경기도 수원시 영통구 광교로 107, 3층 302호<br/>
-                    <em>대표</em><span class="n">김택수</span><span class="b">|</span>
-                    <em>사업자</em><span class="n">828-99-01639</span><br class="mshow"/><span class="b mhide">|</span>
-                    <em>통신판매업신고</em><span class="n">제 2019-수원영통-0447 호</span><br/>
-                    <em>전화</em><span class="n">031-256-2662</span><span class="b">|</span>
-                    <em>메일</em><span class="n">lovezm3@naver.com</span><br class="mshow"/><span class="b mhide">|</span>
-                    <em>팩스</em><span class="n"> 0504-085-6559</span>
-                    </p>
-                </div>
             </div>
-            <h4 class="mtit">Contact us</h4>
-            <ul class="cr">
-                <li>
-                    <em>수원역점</em>
-                    <p> 경기도 수원시 팔달구 덕영대로 905, 2층(아이메카빌딩)</p>
-                </li>
-                <li>
-                    <em>장안문점</em>
-                    <p>경기도 수원시 장안구 정조로 940-1(영화동, 연세IT미래교육원 빌딩)</p>
-                </li>
-            </ul>
         </article>
         <article class="footer02">
             <div class="cl">
@@ -201,7 +216,7 @@
                 <a>서비스이용약관</a>
             </div>
             <div class="cr">
-                COPYRIGHT(C) 2025 위카 ALL RIGHTS RESERVED.
+                COPYRIGHT(C) 2025 픽고 ALL RIGHTS RESERVED.
             </div>
         </article>
     </footer>
