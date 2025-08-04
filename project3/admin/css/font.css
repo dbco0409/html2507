@@ -1,0 +1,43 @@
+@font-face {
+  font-family: "Noto Sans";
+  src: url("./fonts/NotoSans-Bold.eot"); /* IE9 Compat Modes */
+  src: url("./fonts/NotoSans-Bold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+	url("./fonts/NotoSans-Bold.otf") format("opentype"), 
+    url("./fonts/NotoSans-Bold.woff") format("woff"), /* Modern Browsers */
+    url("./fonts/NotoSans-Bold.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: 600;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url("./fonts/NotoSans-Medium.eot"); /* IE9 Compat Modes */
+  src: url("./fonts/NotoSans-Medium.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+	url("./fonts/NotoSans-Medium.ttf") format("truetype"), 
+    url("./fonts/NotoSans-Medium.woff") format("woff"), /* Modern Browsers */
+    url("./fonts/NotoSans-Medium.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url("./fonts/NotoSans-Regular.eot"); /* IE9 Compat Modes */
+  src: url("./fonts/NotoSans-Regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+	url("./fonts/NotoSans-Regular.ttf") format("truetype"), 
+    url("./fonts/NotoSans-Regular.woff") format("woff"), /* Modern Browsers */
+    url("./fonts/NotoSans-Regular.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./fonts/Poppins-Bold.eot"); /* IE9 Compat Modes */
+  src: url("./fonts/Poppins-Bold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+	url("./fonts/Poppins-Bold.ttf") format("truetype"), 
+    url("./fonts/Poppins-Bold.woff") format("woff"); /* Modern Browsers */
+  font-weight: 600;
+  font-style: normal;
+}

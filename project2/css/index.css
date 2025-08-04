@@ -20,7 +20,7 @@
 #main01 .cs-down_btn {position: absolute;height: 35px;width: 20px;border-radius: 10px;border: 2px solid #fff;bottom: 40px;left: 50%; margin-left: -10px;}
 #main01 .cs-down_btn::before { content: ''; height: 5px; width: 5px; border-radius: 50%; position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); background-color: #fff; -webkit-animation: UpAndDown 3s infinite; animation: UpAndDown 3s infinite; } @keyframes UpAndDown { 0% { transform: translate(-50%, -50%) translateY(0); } 50% { transform: translate(-50%, -50%) translateY(-15px); } 100% { transform: translate(-50%, -50%) translateY(0); } }
 
-#main02{position:fixed; height:372px; top:150px; right:2%; background:rgba(255,255,255,.5); padding:10px; margin-bottom:80px; border-radius: 20px; overflow: hidden; display:flex; justify-content: center; align-items: center; z-index:100 }
+#main02{position:fixed; height:372px; top:150px; right:2%; background:rgba(255,255,255,.5); padding:10px; border-radius: 20px; overflow: hidden; display:flex; justify-content: center; align-items: center; z-index:100 }
 #main02 .quick_form{width:250px; margin:auto;}
 #main02 .quick_form .quick_tab{display:inline-flex; border-radius: 100px; background:#fff; border:1px solid var(--gray-200); margin-bottom:15px;}
 #main02 .quick_form .quick_tab .btn{width:120px; background:#fff; padding: 8px; color: var(--black-900); font-size: 16px; font-weight: 600; height: 40px; border-radius: 20px; font-family: 'Noto Sans KR', sans-serif;outline:none; }
@@ -36,7 +36,7 @@
 #main02 .quick_form .inner .frm input:focus{outline:none; box-shadow: none;}
 #main02 .quick_form .update_btn{width:100%; height:50px; font-size: 20px; color:#fff; background: linear-gradient(0deg, #1A00DF, #8B11EB); border-radius:20px; border:0;  }
 
-#main03{width:90%; max-width:1200px; margin:0 auto 100px; }
+#main03{width:90%; max-width:1200px; margin:120px auto 100px; }
 #main03 .txtbox h1{font-size:32px; font-weight:900; margin-bottom:8px; }
 #main03 .txtbox p{font-size:24px; font-weight:400; margin-bottom:32px; }
 #main03 .box{display:flex; justify-content:space-between; align-items: center;}
