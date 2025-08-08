@@ -19940,6 +19940,15 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   vertical-align: middle;
 }
 
+.btn-icon-img img{
+  max-width:100%; 
+  margin-bottom:20px;
+  border-radius: 4px;
+}
+.btn-icon-img span{
+  margin-left:0;
+}
+
 code[class*="language-"],
 pre[class*="language-"] {
   font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
@@ -20677,4 +20686,6 @@ pre>code.highlight {
   margin-left: 1rem;
 }
 
-/*# sourceMappingURL=dashboard-free.css.map */
+.logo{color:#222; font-weight:900; font-size:26px;}
+.logo span{display:inline-block;}
+.logo span.adm{color:#ef0e0e; font-size:18px; transform: translateY(-3px); }

@@ -1,3 +1,5 @@
+let apiKey = 'b6QUXFo4NJdzDjrwkgiDQAoVJIhjHLU9NplomktTDExQr8f5t153FdoHN%2FhWgBpgNcbIWhNsL%2FfJSnFqNZGdvg%3D%3D';
+
 document.addEventListener("DOMContentLoaded", function () {
     const tabButtons = document.querySelectorAll(".quick_tab .btn");
     const tabs = document.querySelectorAll(".quick_form .tab");
@@ -20,9 +22,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const input = document.querySelector('input[name="foodName"]');
     const keywordBox = document.querySelector('.keyword_best');
-    const keywordItems = keywordBox.querySelectorAll('li');
+    const keywordList = keywordBox.querySelector('ul');
 
-    input.addEventListener('input', function () {
+    input.addEventListener('input', async function () {
         const query = this.value.trim();
 
         if (query === '') {
@@ -30,26 +32,37 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        let hasMatch = false;
+        try {
+            const url = `https://apis.data.go.kr/1471000/FoodNtrCpntDbInfo02/getFoodNtrCpntDbInq02?serviceKey=${apiKey}&pageNo=1&numOfRows=10&type=json&FOOD_NM_KR=${encodeURIComponent(query)}`;
+            // ✅ 공공 API로 음식명 검색 요청
+            const response = await fetch(url);
+            const data = await response.json();
 
-        keywordItems.forEach(item => {
-            if (item.textContent.includes(query)) {
-                item.style.display = 'list-item';
-                hasMatch = true;
-            } else {
-                item.style.display = 'none';
+            // ✅ 기존 리스트 초기화
+            keywordList.innerHTML = '';
+
+            const items = data.body?.items || [];
+
+            if (items.length === 0) {
+                keywordBox.style.display = 'none';
+                return;
             }
-        });
 
-        keywordBox.style.display = hasMatch ? 'block' : 'none';
-    });
+            items.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item.FOOD_NM_KR;
+                li.addEventListener('click', function () {
+                    input.value = this.textContent;
+                    keywordBox.style.display = 'none';
+                });
+                keywordList.appendChild(li);
+            });
 
-    // 항목 클릭 시 input에 자동 입력
-    keywordItems.forEach(item => {
-        item.addEventListener('click', function () {
-            input.value = this.textContent;
+            keywordBox.style.display = 'block';
+        } catch (error) {
+            console.error('API 요청 오류:', error);
             keywordBox.style.display = 'none';
-        });
+        }
     });
 });
 
@@ -87,7 +100,6 @@ async function getCalories() {
     document.getElementById("search").style.display = "none";
     document.querySelector(".quick_loading").style.display = "block";
 
-    const apiKey = 'b6QUXFo4NJdzDjrwkgiDQAoVJIhjHLU9NplomktTDExQr8f5t153FdoHN%2FhWgBpgNcbIWhNsL%2FfJSnFqNZGdvg%3D%3D';
     const url = `https://apis.data.go.kr/1471000/FoodNtrCpntDbInfo02/getFoodNtrCpntDbInq02?serviceKey=${apiKey}&pageNo=1&numOfRows=1&type=xml&FOOD_NM_KR=${encodeURIComponent(foodName)}`;
 
     try {
@@ -100,7 +112,10 @@ async function getCalories() {
 
         // 2. 결과 추출
         const amtNum1 = xmlDoc.querySelector("AMT_NUM1");
+        const serving_size1 = xmlDoc.querySelector("SERVING_SIZE");
         const kcal = amtNum1 ? amtNum1.textContent : null;
+        const serving_size = serving_size1 ? serving_size1.textContent : null;
+
 
         // 3. 결과 보여주기
         document.querySelector(".quick_loading").style.display = "none";
@@ -108,8 +123,9 @@ async function getCalories() {
         document.getElementById("search_result").style.display = "block";
 
         if (kcal) {
+            const kcalFixed = parseFloat(kcal).toFixed(2);
             document.getElementById("resultArea").innerHTML =
-                `<strong class="foodNm">${foodName}</strong>의 칼로리는 <strong class="cal">${kcal} kcal</strong> 입니다.`;
+                `<strong class="foodNm">${foodName}</strong> ${serving_size}당 칼로리는 <strong class="cal">${kcalFixed} kcal</strong> 입니다.`;
         } else {
             document.getElementById("resultArea").innerHTML =
                 `❌ <strong>${foodName}</strong>의 칼로리 정보를 찾을 수 없습니다.`;

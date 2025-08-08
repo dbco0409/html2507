@@ -10,7 +10,7 @@ html,body{overflow:hidden;}
 }
 #main01 .bg{position:absolute; z-index:3; top:0; left:0; width:100%; height:100%; background:linear-gradient(180deg, rgba(0,0,0,0.4), transparent)}
 #main01 .swiper-container{height:100%; }
-#main01 .swiper-slide img{max-width:100%; height:100%; object-fit: cover; }
+#main01 .swiper-slide img{width:100vw; height:100vh; object-fit: cover; }
 #main01 .quick_form{display:block; width:768px; margin:auto; position:absolute; top:50%; left:50%; transform: translate(-50%, -50%); z-index:5; background-color: rgba(255,255,255,.7);  padding:30px; border-radius:20px; transition: transform 0.5s ease-in-out;}
 #main01 .quick_form.animate {animation: moveUpDown 0.5s ease-in-out;}
 

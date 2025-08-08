@@ -34,7 +34,10 @@
 #sub_top .datefrm .inner .frm:first-child{margin-left:0; }
 #sub_top .datefrm .inner .frm label{font-size:14px; font-family: 'Noto Sans KR', sans-serif; position:relative; font-weight:600; }
 #sub_top .datefrm .inner .frm label #month{position:absolute; right:0; top:0; }
-#sub_top .datefrm .inner .frm input{background:transparent; color:#222; border:0; font-family: 'Noto Sans KR', sans-serif; padding:0; text-align: center; cursor:pointer; }
+#sub_top .datefrm .inner .frm select,
+#sub_top .datefrm .inner .frm option,
+#sub_top .datefrm .inner .frm input{background:#fff; color:#222; border:0; font-family: 'Noto Sans KR', sans-serif; padding:0; text-align: center; cursor:pointer; }
+#sub_top .datefrm .inner .frm option{text-align:left;}
 #sub_top .datefrm .inner .frm .ages{display:flex; width:250px; align-items: center; justify-content: center;}
 #sub_top .datefrm .inner .frm .ages p{margin:0; width:60%; text-align: center;}
 #sub_top .datefrm .inner .frm input:focus{outline:none; box-shadow: none;}
