@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fit, Up</title>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/swiper.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+
+    <!-- js -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <script src="./js/commons.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/search.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <div class="wrap">
+            <div class="logo">
+                <a href="index.html">Fit<span>Up</span></a>
+            </div>
+            <nav class="menu">
+                <a href="index.html">HOME</a>
+                <a href="about.html">ABOUT</a>
+                <a href="search.html">SEARCH</a>
+                <a href="product.html">PRODUCT</a>
+                <a href="event.html">EVENT</a>
+            </nav>
+        </div>
+    </header>
+    <div id="fixedbg"></div>
+    <section id="main01">
+        <div class="bg"></div>
+        <div class="main_slider swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide slide01">
+					<img src="./images/main/food1.jpg"/>
+				</div>
+				<div class="swiper-slide slide02">
+					<img src="./images/main/food2.png"/>
+				</div>
+                <div class="swiper-slide slide03">
+					<img src="./images/main/food3.jpg"/>
+				</div>
+                <div class="swiper-slide slide04">
+					<img src="./images/main/food4.jpg"/>
+				</div>
+			</div>
+		</div>
+        <div class="quick_form quick" id="solution">
+            <h3>핏업이 제안하는<br/><span>음식 솔루션!</span></h3>
+            <div class="quick_tab">
+                <button type="button" id="day" class="btn active">🍕 음식으로 칼로리 찾기</button>
+                <button type="button" id="month" class="btn">🏸 칼로리로 음식 찾기</button>
+            </div>
+            <div class="inner tab active" id="tab1">
+                <div id="search">
+                    <div class="frm">
+                        <label for="target">음식이름으로 칼로리를 검색하세요.</label>
+                        <input type="text" name="foodName" id="foodName" class="frm-input" autofocus>
+                        <div class="keyword_best">
+                            <h3 class="soundOnly">추천 검색어</h3>
+                            <ul>
+                                <li>돼지국밥</li>
+                                <li>돼지갈비</li>
+                                <li>삼겹살</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="btns">
+                        <button type="submit" class="btn update_btn" onclick="getCalories()"><i class="fa-solid fa-magnifying-glass"></i> 칼로리 계산</button>
+                    </div>
+                </div>
+                <div id="search_result">
+                    <div class="frm">
+                        <label for="target">음식이름으로 칼로리를 검색 결과</label>
+                        <div id="resultArea">결과값</div>
+                    </div>
+                </div>
+            </div>
+            <div class="inner tab" id="tab2">
+                <div class="frm">
+                    <label for="target">칼로리로 음식들을 검색하세요.</label>
+                    <select id="target">
+                        <option>400kcal 이하 한식</option>
+                        <option>300kcal 이하 샐러드</option>
+                        <option>250kcal 이하 디저트</option>
+                        <option>500kcal 이하 패스트푸드</option>
+                        <option>200kcal 이하 음료</option>
+                    </select>
+                </div>
+                <div class="btns">
+                    <button type="submit" class="btn update_btn" onclick="getWeatherApiParamsFromAI()"><i class="fa-solid fa-magnifying-glass"></i> 음식 찾기</button>
+                </div>
+            </div>
+            
+        </div>
+        <div class="quick_loading">
+            <h2>고객님께 딱 맞는 솔루션을 <br/>찾고 있습니다.</h2>
+            <img src="./images/main/loading.svg"/>
+        </div>
+    </section>
+
+</body>
+
+</html>
+

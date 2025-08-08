@@ -14,68 +14,51 @@ $(document).ready(function() {
 });
 
 async function getWeatherApiParamsFromAI() {
-    const addr = document.getElementById('addr').value;
-    const dateRange = document.getElementById('date').value.replace(/\s/g, '');
-    const [startDateStr, endDateStr] = dateRange.split('-');
-    const API_KEY = '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'; // 여기에 OpenAI API 키를 넣어주세요 (테스트 용도만)
-    const prompt = `
-사용자가 여행지로 '${addr}'를 선택했고, 여행 기간은 ${startDateStr}부터 ${endDateStr}까지입니다.
+    const target = document.getElementById('target').value;
+    const style = document.getElementById('style').value;
 
-작년 같은 시기의 날씨를 추정해서 아래 기준에 따라 'when' 코드를 정해줘:
+    // DOM 요소
+    const resultDiv = document.getElementById('search_result');
+    const resultArea = document.getElementById('resultArea');
 
-when 코드 기준:
-1. 맑은 날이 많음
-2. 비가 자주 옴
-3. 흐리고 쌀쌀함
-4. 매우 추움
-5. 더움
-
-또한 지역 키워드를 기반으로 다음 기준에 따라 'where' 코드를 정해줘:
-
-where 코드 기준:
-1. 도시
-2. 시골
-3. 산
-4. 바다
-5. 강변
-6. 섬
-
-반드시 아래 형식으로만 출력해:
-when: 숫자
-where: 숫자
-`;
-
-    const body = {
-        model: 'gpt-4.1',
-        messages: [
-            { role: 'system', content: '너는 세계 날씨와 여행 스타일을 분석하는 전문가야.' },
-            { role: 'user', content: prompt }
-        ],
-        temperature: 0.7
-    };
+    // 로딩 상태 보여주기
+    document.getElementById("solution").style.display = "none";
+    document.getElementById("search").style.display = "none";
+    document.querySelector(".quick_loading").style.display = "block";
 
     try {
-        const response = await fetch('https://api.openai.com/v1/chat/completions', {
+        const response = await fetch('./api/get_solution.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${API_KEY}`
             },
-            body: JSON.stringify(body)
+            body: JSON.stringify({
+                goal: target,
+                habit: style
+            })
         });
-        
-    } catch (error) {
-        if (response.status === 429) {
-            console.error("Rate limit exceeded. Try again later.");
-            return "";
-        }else
-            console.error('Error: ', error);
-            return "";
+
+        const data = await response.json();
+
+        if (data.result) {
+            // 결과 표시
+            resultArea.innerHTML = data.result;
+
+            // 결과 화면 전환
+            document.querySelector(".quick_loading").style.display = "none";
+            document.getElementById("solution").style.display = "block";
+            document.getElementById("search_result").style.display = "block";
+        } else {
+            alert("결과를 받아오지 못했습니다.");
+            document.querySelector(".quick_loading").style.display = "none";
+            document.getElementById("search_result").style.display = "block";
+        }
+
+    } catch (err) {
+        console.error(err);
+        alert("에러 발생: " + err.message);
+        document.querySelector(".quick_loading").style.display = "none";
+        document.getElementById("search_result").style.display = "block";
     }
 }
-function getDateDiff(start, end) {
-    const startDate = new Date(start.slice(0, 4), start.slice(4, 6) - 1, start.slice(6, 8));
-    const endDate = new Date(end.slice(0, 4), end.slice(4, 6) - 1, end.slice(6, 8));
-    const diffTime = endDate - startDate;
-    return Math.floor(diffTime / (1000 * 60 * 60 * 24));
-}
+

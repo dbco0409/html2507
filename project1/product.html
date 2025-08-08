@@ -9,6 +9,7 @@
     <script src="./js/jquery-1.12.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="./js/commons.js"></script>
+    <script src="./js/product.js"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -19,13 +20,14 @@
      <header id="header">
         <div class="wrap">
             <div class="logo">
-                <a href="index.html">FIT<span>go</span></a>
+                <a href="index.html">Fit<span>Up</span></a>
             </div>
-            <nav class="menu">
+            <nav class="menu black-menu">
                 <a href="index.html">HOME</a>
                 <a href="about.html">ABOUT</a>
-                <a href="totmap.html">TOTMAP</a>
+                <a href="search.html">SEARCH</a>
                 <a href="product.html">PRODUCT</a>
+                <a href="event.html">EVENT</a>
             </nav>
         </div>
     </header>
@@ -39,21 +41,31 @@
         </div>
         <div class="datefrm">
             <div class="frm">
-                <div class="quick_tab">
-                    <button type="button" id="day" class="btn active"><i class="fas fa-car-side"></i>여자</button>
-                    <button type="button" id="month" class="btn"><i class="fas fa-calendar-check"></i>남자</button>
-                </div>
                 <div class="inner">
                     <div class="frm">
-                        <label for="addr">어디로 떠나시나요?</label>
-                        <input type="text" id="addr" class="selected_txt" readonly value="대한민국 / 서울">
+                        <label for="target">당신의 목표는 무엇인가요?</label>
+                        <select id="target">
+                            <option>체중 감량</option>
+                            <option>체지방 감소</option>
+                            <option>근육 증가</option>
+                            <option>체형 유지 / 건강한 식사 습관</option>
+                            <option>특정 질환 관리 (ex. 당뇨, 고혈압 등)</option>
+                            <option>피부 개선 / 컨디션 개선</option>
+                        </select>
                     </div>
                     <div class="frm">
-                        <label for="date">여행 날짜</label>
-                        <input type="text" id="date" class="selected_txt" readonly value="2025.08.04 - 2025.08.06">
+                        <label for="style">당신의 평소 식습관에 가장 가까운 것을 골라주세요.</label>
+                        <select id="style">
+                            <option value="탄수화물 위주 식사">🍚 탄수화물 위주 식사</option>
+                            <option value="단백질/고기 위주 식사">🍖 단백질/고기 위주 식사</option>
+                            <option value="채소 중심 건강식">🥬 채소 중심 건강식</option>
+                            <option value="배달, 패스트푸드, 편의점 음식 위주">🍟 배달, 패스트푸드, 편의점 음식 위주</option>
+                        </select>
                     </div>
                     <div class="btns">
-                        <button type="submit" class="btn update_btn"><i class="fa-solid fa-magnifying-glass"></i>제품 검색</button>
+                        <button type="submit" class="btn update_btn" onclick="redirectToProduct()">
+                            <i class="fa-solid fa-magnifying-glass"></i>제품 검색
+                        </button>
                     </div>
                 </div>
             </div>
@@ -119,6 +131,15 @@
                 </div>
             </div>
         </div>
+        <?php
+        // GET 파라미터 받기
+        $solution = isset($_GET['solution']) ? intval($_GET['solution']) : null;
+        $habit = isset($_GET['habit']) ? intval($_GET['habit']) : null;
+
+        // 각 항목 배열 정의
+        $solution_items = ['식사 대체용', '단백질 보충', '건강한 간식', '클린 식단', '체지방 커팅', '외식 대체용', '채식 위주'];
+        $habit_items = ['아침 대용', '건강한 야식', '무설탕 간식', '저탄수 식품', '지방 분해 제품'];
+        ?>
         <div class="search">
             <div class="box">
                 <h3>제품 검색</h3>
@@ -128,47 +149,41 @@
                 </form>
             </div>
             <div class="box">
-                <h3>성별</h3>
+                <h3>목표별 찾기</h3>
                 <ul>
-                    <li class="active">공용</li>
-                    <li>여자</li>
-                    <li>남자</li>
-                    <li>어린이</li>
+                    <li class="active">체중 감량</li>
+                    <li>근육 증가</li>
+                    <li>건강 유지</li>
+                    <li>체지방 감소</li>
+                    <li>체형 유지</li>
+                    <li>특정 질환 관리</li>
+                    <li>피부 개선 / 컨디션 개선</li>
                 </ul>
             </div>
             <div class="box">
-                <h3>여행날씨</h3>
+                <h3>솔루션별 찾기</h3>
                 <ul>
-                    <li class="active">언제든지</li>
-                    <li>맑은날</li>
-                    <li>비오는날</li>
-                    <li>쌀쌀한날</li>
-                    <li>추운날</li>
-                    <li>더운날</li>
+                    <?php foreach ($solution_items as $index => $item): ?>
+                        <li class="<?= ($solution === $index + 1) ? 'active' : '' ?>"><?= htmlspecialchars($item) ?></li>
+                    <?php endforeach; ?>
                 </ul>
             </div>
             <div class="box">
-                <h3>여행장소</h3>
+                <h3>식습관별 찾기</h3>
                 <ul>
-                    <li>어디든지</li>
-                    <li class="active">도시</li>
-                    <li>시골</li>
-                    <li>관광지</li>
-                    <li>산</li>
-                    <li>바다</li>
-                    <li>강변</li>
-                    <li>섬</li>
+                    <?php foreach ($habit_items as $index => $item): ?>
+                        <li class="<?= ($habit === $index + 1) ? 'active' : '' ?>"><?= htmlspecialchars($item) ?></li>
+                    <?php endforeach; ?>
                 </ul>
             </div>
             <div class="box">
-                <h3>사이즈</h3>
+                <h3>용량</h3>
                 <ul>
-                    <li>프리사이즈</li>
-                    <li class="active">스몰</li>
-                    <li>미디움</li>
-                    <li>라지</li>
-                    <li>XL</li>
-                    <li>XXL</li>
+                    <li>1인분</li>
+                    <li class="active">1-2인분</li>
+                    <li>2-3인분</li>
+                    <li>3-4인분</li>
+                    <li>대용량</li>
                 </ul>
             </div>
             <div class="box">
