@@ -65,23 +65,18 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="./profile.html">
-              <i class="ni ni-shop text-light"></i> 제품 관리
-            </a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="./tables.html">
-              <i class="ni ni-bullet-list-67 text-blue"></i> 이벤트관리
+            <a class="nav-link active" href="./product_list.html">
+              <i class="ni ni-shop text-blue"></i> 제품 관리
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="./icons.html">
+            <a class="nav-link" href="./event_list.html">
+              <i class="ni ni-bullet-list-67 text-light"></i> 이벤트관리
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="./image.html">
               <i class="ni ni-image text-light"></i> 이미지 관리
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="./keyword.html">
-              <i class="ni ni-laptop text-light"></i> 키워드 관리
             </a>
           </li>
         </ul>
@@ -92,18 +87,13 @@
         <!-- Navigation -->
         <ul class="navbar-nav mb-md-3">
           <li class="nav-item ">
-            <a class="nav-link" href="../index.html">
-              <i class="ni ni-settings-gear-65 text-primary"></i> 관리자 수정
+            <a class="nav-link" href="./admin_update.html">
+              <i class="ni ni-settings-gear-65 text-info"></i> 관리자 수정
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="../examples/icons.html">
-              <i class="ni ni-image text-blue"></i> 이미지 관리
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../examples/logout.html">
-              <i class="ni ni-button-power text-info"></i> 로그아웃
+            <a class="nav-link" href="./logout.html">
+              <i class="ni ni-button-power text-red"></i> 로그아웃
             </a>
           </li>
         </ul>
@@ -115,7 +105,7 @@
     <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
       <div class="container-fluid">
         <!-- Brand -->
-        <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="../index.html">이벤트 관리</a>
+        <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="../index.html">제품 관리</a>
       </div>
     </nav>
     <!-- End Navbar -->
@@ -127,37 +117,100 @@
         <div class="col">
           <div class="card shadow">
             <div class="card-header border-0">
-              <h3 class="mb-0">이벤트 리스트</h3>
+              <h3 class="mb-0">제품 리스트</h3>
             </div>
             <div class="table-responsive">
               <table class="table align-items-center table-flush">
                 <colgroup>
+                  <col width="100"/>
+                  <col width="100"/>
                   <col/>
                   <col width="100"/>
-                  <col width="100"/>
+                  <col width="200"/>
+                   <col/>
                 </colgroup>
                 <thead class="thead-light">
                   <tr>
-                    <th scope="col">제목</th>
-                    <th scope="col">상태</th>
+                    <th scope="col">카테고리1</th>
+                    <th scope="col">카테고리2</th>
+                    <th scope="col">제품명</th>
+                    <th scope="col">가격</th>
+                    <th scope="col">쇼핑몰명</th>
                     <th scope="col"></th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
+                    <td>
+                      <span class="badge badge-dot mr-4">
+                        식사 대체용
+                      </span>
+                    </td>
+                    <td>
+                      <span class="badge badge-dot mr-4">
+                        저탄수 식품
+                      </span>
+                    </td>
                     <th scope="row">
                       <div class="media align-items-center">
                         <a href="#" class="avatar mr-3">
                           <img alt="Image placeholder" src="../assets/img/theme/bootstrap.jpg">
                         </a>
                         <div class="media-body">
-                          <span class="mb-0 text-sm">[이벤트] 나만의 식단 받고, 맞춤 제품 할인까지! 🎁</span>
+                          <a href="product_view.html" class="mb-0 text-sm">1+1+1 든든한 한끼 오늘은 현미밥 15종</a>
                         </div>
                       </div>
                     </th>
                     <td>
                       <span class="badge badge-dot mr-4">
-                        <i class="bg-success"></i> 진행전
+                        35,900원
+                      </span>
+                    </td>
+                    <td>
+                      <span class="badge badge-dot mr-4">
+                       다신샵
+                      </span>
+                    </td>
+                    <td class="text-right">
+                      <div class="dropdown">
+                        <a class="btn btn-sm btn-icon-only text-dark" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          수정
+                        </a>
+                        <a class="btn btn-sm btn-icon-only text-red" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          삭제
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                <tr>
+                    <td>
+                      <span class="badge badge-dot mr-4">
+                        식사 대체용
+                      </span>
+                    </td>
+                    <td>
+                      <span class="badge badge-dot mr-4">
+                        저탄수 식품
+                      </span>
+                    </td>
+                    <th scope="row">
+                      <div class="media align-items-center">
+                        <a href="#" class="avatar mr-3">
+                          <img alt="Image placeholder" src="../assets/img/theme/bootstrap.jpg">
+                        </a>
+                        <div class="media-body">
+                          <span class="mb-0 text-sm">1+1+1 든든한 한끼 오늘은 현미밥 15종</span>
+                        </div>
+                      </div>
+                    </th>
+                    <td>
+                      <span class="badge badge-dot mr-4">
+                        35,900원
+                      </span>
+                    </td>
+                    <td>
+                      <span class="badge badge-dot mr-4">
+                       다신샵
                       </span>
                     </td>
                     <td class="text-right">
@@ -172,46 +225,34 @@
                     </td>
                   </tr>
                   <tr>
-                    <th scope="row">
-                      <div class="media align-items-center">
-                        <a href="#" class="avatar mr-3">
-                          <img alt="Image placeholder" src="../assets/img/theme/bootstrap.jpg">
-                        </a>
-                        <div class="media-body">
-                          <span class="mb-0 text-sm">[챌린지] 하루 칼로리 맞추기! 참여만 해도 선물 증정 🎯</span>
-                        </div>
-                      </div>
-                    </th>
                     <td>
                       <span class="badge badge-dot mr-4">
-                        <i class="bg-light"></i> 마감
+                        식사 대체용
                       </span>
                     </td>
-                    <td class="text-right">
-                      <div class="dropdown">
-                        <a class="btn btn-sm btn-icon-only text-dark" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          수정
-                        </a>
-                        <a class="btn btn-sm btn-icon-only text-red" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          삭제
-                        </a>
-                      </div>
+                    <td>
+                      <span class="badge badge-dot mr-4">
+                        저탄수 식품
+                      </span>
                     </td>
-                  </tr>
-                  <tr>
                     <th scope="row">
                       <div class="media align-items-center">
                         <a href="#" class="avatar mr-3">
                           <img alt="Image placeholder" src="../assets/img/theme/bootstrap.jpg">
                         </a>
                         <div class="media-body">
-                          <span class="mb-0 text-sm">[신규회원 이벤트] 식습관 입력하고 건강관리 키트 받자! 🥗</span>
+                          <span class="mb-0 text-sm">1+1+1 든든한 한끼 오늘은 현미밥 15종</span>
                         </div>
                       </div>
                     </th>
                     <td>
                       <span class="badge badge-dot mr-4">
-                        <i class="bg-primary"></i> 진행중
+                        35,900원
+                      </span>
+                    </td>
+                    <td>
+                      <span class="badge badge-dot mr-4">
+                       다신샵
                       </span>
                     </td>
                     <td class="text-right">
