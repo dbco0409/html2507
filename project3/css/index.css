@@ -1,0 +1,26 @@
+@charset "utf-8";
+@import url("./common.css");
+.soundOnly{display:none; }
+html,body{overflow:hidden;}
+#main01 {
+    width:100%;
+    height:100vh;
+    position:relative;
+    overflow:hidden;
+}
+#main01 .bg{position:absolute; z-index:3; top:0; left:0; width:100%; height:100%; background:linear-gradient(180deg, rgba(0,0,0,0.4), transparent)}
+#main01 .swiper-container{height:100%; }
+#main01 .swiper-slide img{width:100vw; height:100vh; object-fit: cover; }
+#main01 .lang{margin-top:20px;}
+#main01 .lang a{display:inline-block; margin:5px; }
+#main01 .lang img{width:50px; height:50px; }
+#main01 .main_txt{color:#fff; position:absolute; top:50%; left:50%; transform: translate(-50%, -50%); z-index:9; text-align: center; }
+#main01 .main_txt h1{margin:0;}
+#main01 .main_txt span{font-size:18px; }
+#main01 .boxMenu{margin-top:30px; }
+#main01 .boxMenu ul{display:flex; flex-wrap: wrap;}
+#main01 .boxMenu li{width:50%; display:flex; }
+#main01 .boxMenu li button{display:flex; width:100%; padding:10px; margin:5px; font-size:24px; font-weight: 900;background:rgba(255,255,255,.9); flex-direction: column; align-items: center; justify-content: center; outline: none; }
+#main01 .boxMenu li button .one{background: #edf2f8;color: #402b76; border-radius:50%; width:80px; height:80px; font-size:40px; display: flex; margin-bottom:10px; justify-content: center; align-items: center;}
+#main01 .boxMenu li button .en{font-size:14px;font-weight: 400; }
+#main01 .boxMenu li button:hover{background:rgba(225, 216, 255, 0.9);}

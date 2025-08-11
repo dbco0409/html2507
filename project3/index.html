@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모두의 호텔</title>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/swiper.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+
+    <!-- js -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <script src="./js/commons.js"></script>
+    <script src="./js/index.js"></script>
+</head>
+
+<body>
+    <section id="main01">
+        <div class="bg"></div>
+        <div class="main_slider swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide slide01">
+					<img src="./images/main/main_visual01.jpg"/>
+				</div>
+				<div class="swiper-slide slide02">
+					<img src="./images/main/main_visual02.jpg"/>
+				</div>
+                <div class="swiper-slide slide03">
+					<img src="./images/main/main_visual03.jpg"/>
+				</div>
+                <div class="swiper-slide slide04">
+					<img src="./images/main/main_visual04.jpg"/>
+				</div>
+			</div>
+		</div>
+        
+        <div class="main_txt">
+            <h1>모두의호텔<br/><span>EVERY HOTEL</span></h1>
+            <div class="lang">
+                    <a href=""><img src="./images/common/lang_koro.png" alt=""></a>
+                    <a href=""><img src="./images/common/lang_en.png" alt=""></a>
+                    <a href=""><img src="./images/common/lang_ch.png" alt=""></a>
+                    <a href=""><img src="./images/common/lang_jp.png" alt=""></a>
+                </div>
+            <div class="boxMenu">
+                <div class="menu">
+                    <ul>
+                        <li><button><span class="one"><i class="fa-solid fa-right-to-bracket"></i></span>체크인<span class="en">CHECK IN</span></button></li>
+                        <li><button><span class="one"><i class="fa-solid fa-arrow-right-from-bracket"></i></span>체크아웃<span class="en">CHECK OUT</span></button></li>
+                        <li><button><span class="one"><i class="fa-solid fa-key"></i></span>빠른예약<span class="en">Quick Reservation</span></button></li>
+                        <li><button><span class="one"><i class="fa-solid fa-magnifying-glass"></i></span>예약조회<span class="en">Reservation List</span></button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <nav id="nav">
+        <div class="inner">
+            <div class="wrap">
+                <div class="info">
+                    <h1><i class="fa-solid fa-sailboat"></i> 모두의호텔</h1>
+                    체크인 : PM 3:00 ~ <br/>
+                    체크아웃 : AM 11:00
+                </div>
+            </div>
+            <nav class="menu">
+                <li class="active"><a href="index.html"><span><i class="fa-solid fa-hotel"></i></span>메인화면</a></li>
+                <li><a href="about.html"><span><i class="fa-solid fa-circle-info"></i></span>호텔안내</a></li>
+                <li><a href="about.html"><span><i class="fa-solid fa-bed"></i></span>시설안내</a></li>
+                <li><a href="search.html"><span><i class="fa-solid fa-bell-concierge"></i></span>편의시설</a></li>
+                <li><a href="product.html"><span><i class="fa-solid fa-calendar-days"></i></span>이벤트</a></li>
+            </nav>
+        </div>
+    </nav>
+</body>
+
+</html>
