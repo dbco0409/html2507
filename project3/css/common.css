@@ -149,3 +149,17 @@ select {
 #nav .inner .menu li a span{font-size:30px; display:block; margin-bottom:10px;}
 #nav .inner .menu li a:hover{color:rgba(225, 216, 255)}
 #nav .inner .menu li.active a{color:#a29bff}
+
+@media (max-width: 950px) {
+#nav .inner{justify-content: center;}
+#nav .inner .menu{width:100%; }
+#nav .inner .wrap{display:none; }
+}
+@media (max-width: 568px) {
+#nav .inner .menu li{padding:10px}
+#nav .inner .menu li a{font-size:14px;}
+}
+@media (max-width: 450px) {
+#nav .inner .menu li{padding:5px}
+#nav .inner .menu li a{font-size:12px;}
+}

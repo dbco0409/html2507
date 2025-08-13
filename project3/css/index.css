@@ -36,3 +36,14 @@ html,body{overflow:hidden;}
 .pop .inner .input-group h5 .red{color:#ff0000}
 .pop .inner .input-center{text-align:center; padding:20px 0; color:#222; }
 .pop .inner .btn{margin-top:20px; font-size:20px; text-align: center; background:#402b76; color:#fff; width:100%; font-family: 'Noto Sans KR', sans-serif;}
+
+@media (max-width: 950px) {
+    #main01 .boxMenu ul{width:90vw; }
+}
+@media (max-width: 568px) {
+    #main01 .main_txt{top:47%; }
+    #main01 .boxMenu{margin-top:30px; }
+    #main01 .boxMenu ul{flex-direction: column; }
+    #main01 .boxMenu li{width:100%; }
+    #main01 .boxMenu li button{padding:10px 0;}
+}
