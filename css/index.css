@@ -11,6 +11,7 @@ header h1{color:#fff; font-size:24px; margin:0; }
 #menu a:hover.js{color:rgb(255, 145, 0);}
 #menu a:hover.react{color:rgb(0, 132, 255);}
 h1{margin:0 0 10px;}
+h1 a{color:#fff}
 a{text-decoration: none; color:#000; }
 #main02{width:100%; margin:auto; overflow:hidden;  }
 #main02 .nav{width:90%; max-width:640px; margin:0 auto 50px; padding-top:20px; }
