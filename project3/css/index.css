@@ -15,12 +15,24 @@ html,body{overflow:hidden;}
 #main01 .lang a{display:inline-block; margin:5px; }
 #main01 .lang img{width:50px; height:50px; }
 #main01 .main_txt{color:#fff; position:absolute; top:50%; left:50%; transform: translate(-50%, -50%); z-index:9; text-align: center; }
-#main01 .main_txt h1{margin:0;}
-#main01 .main_txt span{font-size:18px; }
-#main01 .boxMenu{margin-top:30px; }
+#main01 .main_txt h1{margin:0; font-family: 'NanumMyeongjo';}
+#main01 .main_txt span{font-size:18px; font-family: "Noto sans";}
+#main01 .boxMenu{margin-top:80px; }
 #main01 .boxMenu ul{display:flex; flex-wrap: wrap;}
 #main01 .boxMenu li{width:50%; display:flex; }
-#main01 .boxMenu li button{display:flex; width:100%; padding:10px; margin:5px; font-size:24px; font-weight: 900;background:rgba(255,255,255,.9); flex-direction: column; align-items: center; justify-content: center; outline: none; }
+#main01 .boxMenu li button{display:flex; width:100%; padding:15px 0; margin:5px; font-size:24px; font-weight: 600;background:rgba(255,255,255,.9); flex-direction: column; align-items: center; justify-content: center; outline: none; font-family: "Noto sans";}
 #main01 .boxMenu li button .one{background: #edf2f8;color: #402b76; border-radius:50%; width:80px; height:80px; font-size:40px; display: flex; margin-bottom:10px; justify-content: center; align-items: center;}
-#main01 .boxMenu li button .en{font-size:14px;font-weight: 400; }
+#main01 .boxMenu li button .en{font-size:14px;font-weight: 400; display:inline-block; margin-top:5px; color:#868686; }
 #main01 .boxMenu li button:hover{background:rgba(225, 216, 255, 0.9);}
+
+.pop{width:640px; background:rgba(255,255,255,0.8); padding:20px; margin-top:30px;  }
+.pop h4{color:#222; font-size:30px; font-weight:600;  }
+.pop h4::after{content:''; display:block; width:20px; height:1; border-top:3px solid #a999c7; margin:20px auto 40px;  }
+.pop .inner{text-align:left; width:100%; }
+.pop .inner input,
+.pop .inner select{width:100%;  color:#222; font-family: 'Noto Sans KR', sans-serif;}
+.pop .inner .input-group{width:100%; margin-bottom:15px;  }
+.pop .inner .input-group h5{font-size:18px; font-weight:600; color:#222; font-family: 'Noto Sans KR', sans-serif;}
+.pop .inner .input-group h5 .red{color:#ff0000}
+.pop .inner .input-center{text-align:center; padding:20px 0; color:#222; }
+.pop .inner .btn{margin-top:20px; font-size:20px; text-align: center; background:#402b76; color:#fff; width:100%; font-family: 'Noto Sans KR', sans-serif;}
