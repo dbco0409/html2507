@@ -63,7 +63,7 @@
             <tr>
                 <th>CSS 8</th>
                 <td><a href="./work/day09_0725/index.html" class="dynamic-link">Grid 예제1</a></td>
-                <td rowspan="5" class="date">25-07-28</td>
+                <td rowspan="6" class="date">25-07-28</td>
             </tr>
             <tr>
                 <th>CSS 9</th>
@@ -99,33 +99,36 @@
     <script>
     document.addEventListener("DOMContentLoaded", function () {
         const links = document.querySelectorAll('.dynamic-link');
-    
+
         links.forEach(link => {
             link.addEventListener('click', function (e) {
                 e.preventDefault();
-    
-                // 현재 클릭한 <a>의 tr (부모 tr)
+
                 const currentTr = this.closest('tr');
                 const table = currentTr.closest('table');
-    
-                // 기존 iframe row 제거 (기존에 생성된 iframe 행이 있다면 삭제)
-                const existingIframeRow = table.querySelector('tr.iframe-row');
-                if (existingIframeRow) {
+                const existingIframeRow = currentTr.nextElementSibling;
+
+                // 이미 열려 있는 iframe이 바로 아래에 있다면 → 닫기 (토글)
+                if (existingIframeRow && existingIframeRow.classList.contains('iframe-row')) {
                     existingIframeRow.remove();
+                    return; // 종료
                 }
-    
-                // 새로운 tr 생성
+
+                // 다른 열린 iframe-row가 있다면 닫기
+                const allIframeRows = table.querySelectorAll('tr.iframe-row');
+                allIframeRows.forEach(row => row.remove());
+
+                // 새로운 iframe row 생성
                 const newTr = document.createElement('tr');
                 newTr.classList.add('iframe-row');
-    
-                // td 생성 (colspan은 테이블 전체 칸 수와 동일하게 설정)
+
                 const iframeTd = document.createElement('td');
-                iframeTd.colSpan = currentTr.children.length;
-                iframeTd.innerHTML = `<iframe src="${this.href}" width="100%" height="400" style="border:1px solid #ccc;"></iframe>`;
-    
+                iframeTd.colSpan = 3;
+                iframeTd.innerHTML = `
+                    <iframe src="${this.href}" width="100%" height="400" style="border:1px solid #ccc;"></iframe>
+                `;
+
                 newTr.appendChild(iframeTd);
-    
-                // 현재 tr 다음에 iframe tr 삽입
                 currentTr.parentNode.insertBefore(newTr, currentTr.nextSibling);
             });
         });
