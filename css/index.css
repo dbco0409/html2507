@@ -30,7 +30,7 @@ th{width: 120px; padding:10px 0; color:#fff; background:linear-gradient(91deg, #
 td{width:auto; padding:10px; text-align:center; border-bottom:3px solid #fff; background:#ddd}
 td.date{background:#fff; border:1px solid #EAEAEA; margin-bottom:2px; }
 tr:nth-child(even) td:not(.date){background:#eee }
-td a:hover{color:rgb(255, 0, 170);}
+td a:hover{color:rgb(0, 217, 255);}
 td a span{color:#ff0000; font-size:10px; transform: translateY(-10px); display: inline-block;}
 #main02 .content{width:100%; margin:auto; height:100vh; border-top:2px dashed #222; }
 iframe{width:100%; height:60vh; margin-top:20px; background:#fff; }
