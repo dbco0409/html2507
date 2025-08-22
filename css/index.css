@@ -1,4 +1,4 @@
-html, body{height:100%; margin:0; padding:0; }
+html, body{margin:0; padding:0; overflow-y:auto; }
 header{background-color: #fff;width: 100%; height:80px; display:flex; align-items: center; border-bottom:1px solid #eaeaea;}
 header .inner{width:90%; max-width:1200px; margin:Auto; display:flex; justify-content:space-between; align-items: center;height: 72px;}
 header h1{color:#222; font-size:24px; margin:0; }
@@ -15,8 +15,8 @@ header h1{color:#222; font-size:24px; margin:0; }
 h1{margin:0 0 10px;}
 h1 a{color:#000}
 a{text-decoration: none; color:#000; }
-#main02{width:90%; height:calc(100vh - 96px); display:flex; align-items: center; justify-content: center; margin:auto; overflow:hidden;  }
-#main02 .nav{width:30%; margin:0 auto; }
+#main02{width:100%; height:calc(100vh - 96px); display:flex; justify-content: center; margin:auto;  }
+#main02 .nav{width:90%; max-width:768px; margin:0 auto; padding-top:50px;}
 table{width:100%; }
 table,tr,td {
 border: 0;
@@ -32,8 +32,7 @@ td.date{background:#fff; border:1px solid #EAEAEA; margin-bottom:2px; }
 tr:nth-child(even) td:not(.date){background:#eee }
 td a:hover{color:rgb(255, 0, 170);}
 td a span{color:#ff0000; font-size:10px; transform: translateY(-10px); display: inline-block;}
-#main02 .content{width:70%; margin:auto; height:calc(100vh - 96px); padding:30px; }
-iframe{width:100%; height:100%; margin-top:20px; background:#fff; }
+#main02 .content{width:100%; margin:auto; height:100vh; border-top:2px dashed #222; }
+iframe{width:100%; height:60vh; margin-top:20px; background:#fff; }
 .btn{width:100%; display:block; margin-top:10px; background:#fff; border:1px solid #000; border-radius:3px; padding:5px 0; font-size:20px;  }
 .btn:hover{background:#acacac; }
-
